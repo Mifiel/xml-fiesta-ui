@@ -1,6 +1,5 @@
-xml-fiesta-ui.sublime-workspace
-node_modules
-.tmp
-bower_components
-dist
-.sass-cache
+/node_modules
+/dist
+/.tmp
+/.sass-cache
+/bower_components
