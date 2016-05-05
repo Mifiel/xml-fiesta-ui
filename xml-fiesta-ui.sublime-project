@@ -9,6 +9,9 @@
       ],
       "folder_exclude_patterns": [
         "node_modules",
+        "bower_components",
+        ".tmp",
+        ".sass-cache",
         "coverage"
       ],
       "path": "."
