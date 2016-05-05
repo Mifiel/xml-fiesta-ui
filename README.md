@@ -7,6 +7,8 @@ version 0.15.1.
 
 Run `grunt` for building and `grunt serve` for preview.
 
+`browserify node-vendor/xml-fiesta.js -o app/scripts/vendor/xml-fiesta.js -s XMLFiesta`
+
 ## Testing
 
 Running `grunt test` will run the unit tests with karma.
