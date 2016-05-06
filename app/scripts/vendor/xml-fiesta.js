@@ -233,6 +233,7 @@
         signers: []
       };
       options = common.extend(defaultOpts, options);
+      this.name = options.name;
       this.version = options.version;
       hash = new jsrsasign.crypto.MessageDigest({
         alg: 'sha256',
@@ -319,7 +320,7 @@
       }
       doc = null;
       parseString(xml, function(err, result) {
-        var parsedSigners, pdf, pdfAttrs, signers;
+        var options, parsedSigners, pdf, pdfAttrs, signers;
         if (err) {
           throw new Error("Unable to parse xml: " + err);
         }
@@ -338,9 +339,12 @@
             signedAt: signer.signature[0].$.signedAt
           });
         });
-        return doc = new Document(pdf, {
-          signers: parsedSigners
-        });
+        options = {
+          signers: parsedSigners,
+          version: pdfAttrs.version,
+          name: pdfAttrs.name
+        };
+        return doc = new Document(pdf, options);
       });
       return doc;
     };
@@ -410,54 +414,32 @@
   common = require('./common');
 
   Signature = (function() {
-    var _certificate, _email, _signature, _signedAt;
-
-    _certificate = null;
-
-    _signature = null;
-
-    _signedAt = null;
-
-    _email = null;
-
     function Signature(cer, signature, signedAt, email) {
-      if (!signedAt) {
+      this.signature = signature;
+      this.signedAt = signedAt;
+      if (!this.signedAt) {
         throw new errors.ArgumentError('Signature must have signedAt');
       }
       if (!cer) {
         throw new errors.ArgumentError('Signature must have cer');
       }
-      _signature = signature;
-      _signedAt = signedAt;
-      _certificate = new Certificate(false, cer);
-      _email = email;
-      if (_email == null) {
-        _email = _certificate.email();
+      this.certificate = new Certificate(false, cer);
+      if (email == null) {
+        email = this.certificate.email();
       }
-    }
-
-    Signature.prototype.signer = function() {
-      return {
-        id: _certificate.owner_id(),
-        name: _certificate.owner(),
-        email: _email
+      this.signer = {
+        id: this.certificate.owner_id(),
+        name: this.certificate.owner(),
+        email: email
       };
-    };
-
-    Signature.prototype.certificate = function() {
-      return _certificate;
-    };
-
-    Signature.prototype.signedAt = function() {
-      return _signedAt;
-    };
+    }
 
     Signature.prototype.sig = function(format) {
       if (format === 'hex' || !format) {
-        return _signature;
+        return this.signature;
       }
       if (format === 'base64') {
-        return common.hextoB64(_signature);
+        return common.hextoB64(this.signature);
       }
       throw new errors.ArgumentError("unknown format " + format);
     };
@@ -466,7 +448,7 @@
       if (!hash) {
         throw new errors.ArgumentError('hash is required');
       }
-      return _certificate.verifyHexString(hash, _signature);
+      return this.certificate.verifyHexString(hash, this.signature);
     };
 
     Signature.prototype.email = function() {
