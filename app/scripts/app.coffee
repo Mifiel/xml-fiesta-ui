@@ -10,24 +10,34 @@
 ###
 angular
   .module 'xmlFiestaUiApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch',
+    'ngAnimate'
+    'ngCookies'
+    'ngResource'
+    'ui.router'
+    'ngSanitize'
+    'ngTouch'
     'pdf'
   ]
-  .config ($routeProvider) ->
-    $routeProvider
-      .when '/',
+  .config ($stateProvider, $urlRouterProvider) ->
+    $stateProvider
+      .state 'home',
+        url: '/'
         templateUrl: 'views/main.html'
         controller: 'MainCtrl'
         controllerAs: 'main'
-      .when '/verify',
+
+      .state 'verify',
+        url: '/verify'
         templateUrl: 'views/verify.html'
         controller: 'VerifyCtrl'
         controllerAs: 'verify'
-      .otherwise
-        redirectTo: '/'
+
+      .state 'contact',
+        url: '/contact'
+        templateUrl: 'views/contact.html'
+        controller: 'ContactCtrl'
+        controllerAs: 'contact'
+
+    $urlRouterProvider.otherwise('home')
+
 
