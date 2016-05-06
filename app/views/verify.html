@@ -16,7 +16,11 @@
 
   <ul class="list-unstyled">
     <li><strong>Document:</strong> {{ doc.name }}</li>
-    <li><strong>Original Hash:</strong> {{ doc.originalHash }}</li>
+    <li ng-class="{'text-success': oHashValid, 'text-danger': !oHashValid}">
+      <strong>Original Hash: </strong>
+      {{ doc.originalHash }}
+      <i class="glyphicon" ng-class="{'glyphicon-ok': oHashValid, 'glyphicon-remove': !oHashValid}"></i>
+    </li>
   </ul>
 
   <hr />
@@ -27,8 +31,8 @@
       <li><strong>Signed date:</strong> {{ signature.signedAt }}</li>
       <li><strong>RFC:</strong> {{ signature.signer.id }}</li>
       <li><strong>Certificate number:</strong> {{ signature.certificate.getSerialNumberHex() }}</li>
-      <li>
-        <strong>Signature:</strong>
+      <li ng-class="{'text-success': signature.valid, 'text-danger': !signature.valid}">
+        <strong>Signature: <i class="glyphicon" ng-class="{'glyphicon-ok': signature.valid, 'glyphicon-remove': !signature.valid}"></i> </strong>
         <span class="wrap-text">{{ signature.sig('base64') }}</span>
       </li>
     </ul>

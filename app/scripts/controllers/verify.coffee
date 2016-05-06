@@ -17,9 +17,14 @@ angular.module 'xmlFiestaUiApp'
 
     $scope.$watch 'upload', (value) ->
       return unless value
-      doc = XMLFiesta.fromXml(value.result.raw)
+      parsed = XMLFiesta.fromXml(value.result.raw)
+      doc = parsed.document
       $scope.doc = doc
+      $scope.oHashValid = parsed.xmlOriginalHash == doc.originalHash
       $scope.signatures = doc.signatures()
+      $scope.signatures.forEach (signature) ->
+        signature.valid = signature.valid(doc.originalHash)
+
       currentBlob = new Blob([doc.pdfBuffer()], {type: 'application/pdf'})
       $scope.pdfUrl = URL.createObjectURL(currentBlob)
 
