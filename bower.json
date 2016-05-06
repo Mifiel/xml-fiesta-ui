@@ -24,6 +24,9 @@
         "dist/css/bootstrap.css",
         "dist/js/bootstrap.js"
       ]
+    },
+    "pdfjs-dist": {
+      "main": "build/pdf.js"
     }
   }
 }
