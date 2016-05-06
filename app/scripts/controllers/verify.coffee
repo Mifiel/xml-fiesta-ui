@@ -9,6 +9,7 @@
 ###
 angular.module 'xmlFiestaUiApp'
   .controller 'VerifyCtrl', ($scope) ->
+    PDFJS.workerSrc = 'scripts/pdf.worker.js'
 
     $scope.upload = null
 
