@@ -17,7 +17,7 @@ angular.module 'xmlFiestaUiApp'
 
     $scope.$watch 'upload', (value) ->
       return unless value
-      parsed = XMLFiesta.fromXml(value.result.raw)
+      parsed = XMLFiesta.Document.fromXml(value.result.raw)
       doc = parsed.document
       $scope.doc = doc
       $scope.oHashValid = parsed.xmlOriginalHash == doc.originalHash
