@@ -16,9 +16,7 @@ angular.module 'xmlFiestaUiApp'
     $scope.$watch 'upload', (value) ->
       return unless value
       doc = XMLFiesta.fromXml(value.result.raw)
-      # pdfb64 = doc.pdf('base64')
       currentBlob = new Blob([doc.pdfBuffer()], {type: 'application/pdf'})
       $scope.pdfUrl = URL.createObjectURL(currentBlob)
-      console.log($scope.pdfUrl)
 
     return
