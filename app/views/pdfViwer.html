@@ -1,0 +1,10 @@
+<nav class="pdf-controls" ng-class="getNavStyle(scroll)">
+  <button class="btn" ng-click="goPrevious()">&lt;</span></button>
+  <button class="btn" ng-click="goNext()">&gt;</span></button>
+
+  <span>Page: </span>
+  <span> {{pageNum}} / {{pageCount}}</span>
+  <a href="{{pdfUrl}}" target="_blank">Download</a>
+</nav>
+<hr>
+<canvas id="pdf-canvas" class="rotate0"></canvas>

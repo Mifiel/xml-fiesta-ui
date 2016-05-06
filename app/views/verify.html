@@ -1,0 +1,40 @@
+
+<div class="row" ng-show="!pdfUrl">
+  <p>Drag the XML you want to verify.</p>
+  <div class="upload text-center" dropzone>
+    <div class="upload-default">
+      <h6 class="bottom-padder-sm margin-15">Arrastra un archivo XML para validarlo</h6>
+      <button class="btn btn-remind btn-sm">o selecciona uno</button>
+      <input accept-name="XML" accept="text/xml" text="true" class="file-upload-input" fileread="upload" required="true" type="file">
+    </div>
+  </div>
+</div>
+
+
+<div ng-show="pdfUrl">
+  <h2>Signatures</h2>
+
+  <ul class="list-unstyled">
+    <li><strong>Document:</strong> {{ doc.name }}</li>
+    <li><strong>Original Hash:</strong> {{ doc.originalHash }}</li>
+  </ul>
+
+  <hr />
+
+  <div id="signers">
+    <ul class="list-unstyled" ng-repeat="signature in signatures">
+      <li><strong>Signed by:</strong> {{ signature.signer.name }} &lt;{{ signature.signer.email }}&gt;</li>
+      <li><strong>Signed date:</strong> {{ signature.signedAt }}</li>
+      <li><strong>RFC:</strong> {{ signature.signer.id }}</li>
+      <li><strong>Certificate number:</strong> {{ signature.certificate.getSerialNumberHex() }}</li>
+      <li>
+        <strong>Signature:</strong>
+        <span class="wrap-text">{{ signature.sig('base64') }}</span>
+      </li>
+    </ul>
+  </div>
+
+  <div id="pdf-container">
+    <ng-pdf template-url="views/pdfViwer.html"></ng-pdf>
+  </div>
+</div>
