@@ -10,6 +10,31 @@
   </div>
 </div>
 
-<div ng-show="pdfUrl" id="pdf-container">
-  <ng-pdf template-url="views/pdfViwer.html"></ng-pdf>
+
+<div ng-show="pdfUrl">
+  <h2>Signatures</h2>
+
+  <ul class="list-unstyled">
+    <li><strong>Document:</strong> {{ doc.name }}</li>
+    <li><strong>Original Hash:</strong> {{ doc.originalHash }}</li>
+  </ul>
+
+  <hr />
+
+  <div id="signers">
+    <ul class="list-unstyled" ng-repeat="signature in signatures">
+      <li><strong>Signed by:</strong> {{ signature.signer.name }} &lt;{{ signature.signer.email }}&gt;</li>
+      <li><strong>Signed date:</strong> {{ signature.signedAt }}</li>
+      <li><strong>RFC:</strong> {{ signature.signer.id }}</li>
+      <li><strong>Certificate number:</strong> {{ signature.certificate.getSerialNumberHex() }}</li>
+      <li>
+        <strong>Signature:</strong>
+        <span class="wrap-text">{{ signature.sig('base64') }}</span>
+      </li>
+    </ul>
+  </div>
+
+  <div id="pdf-container">
+    <ng-pdf template-url="views/pdfViwer.html"></ng-pdf>
+  </div>
 </div>
