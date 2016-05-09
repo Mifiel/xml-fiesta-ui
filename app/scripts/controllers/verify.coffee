@@ -8,9 +8,19 @@
  # Controller of the xmlFiestaUiApp
 ###
 angular.module 'xmlFiestaUiApp'
-  .controller 'VerifyCtrl', ($scope) ->
+  .controller 'VerifyCtrl', ($scope, localStorageService) ->
     PDFJS.workerSrc = 'scripts/pdf.worker.js'
 
+    fetchRootCerts = ->
+      $scope.certs = []
+      certs = localStorageService.get('rootCerts')
+      return unless certs
+      angular.forEach certs, (el) ->
+        $scope.certs.push el
+
+    fetchRootCerts()
+
+    $scope.ready = $scope.certs.length > 0
     $scope.upload = null
     $scope.doc = null
     $scope.pdfUrl = null

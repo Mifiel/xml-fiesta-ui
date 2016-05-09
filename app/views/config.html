@@ -1,0 +1,17 @@
+<div class="form-group">
+  <label for="cert-uploader">Select the Root certificates</label>
+  <input id="cert-uploader" type="file" accept=".crt" class="cert-uploader" custom-on-change="setRootCerts" multiple="true">
+  <p class="help-block">You can select seeral files in one go.</p>
+</div>
+
+<div ng-show="certs.length > 0" class="root-certificates">
+  <h3>
+    Root Certificates
+    <button ng-click="clear()" class="btn btn-sm btn-default glyphicon glyphicon-trash"></button>
+  </h3>
+  <ul>
+    <li ng-repeat="cert in certs | orderBy:'name'">
+      {{ cert.name }}
+    </li>
+  </ul>
+</div>

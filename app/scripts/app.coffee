@@ -17,7 +17,11 @@ angular
     'ngSanitize'
     'ngTouch'
     'pdf'
+    'LocalStorageModule'
   ]
+  .config (localStorageServiceProvider) ->
+    localStorageServiceProvider.setPrefix('XMLFiesta')
+
   .config ($stateProvider, $urlRouterProvider) ->
     $stateProvider
       .state 'home',
@@ -38,6 +42,10 @@ angular
         controller: 'ContactCtrl'
         controllerAs: 'contact'
 
-    $urlRouterProvider.otherwise('home')
+      .state 'config',
+        url: '/config'
+        templateUrl: 'views/config.html'
+        controller: 'ConfigCtrl'
+        controllerAs: 'config'
 
-
+    $urlRouterProvider.otherwise('/')

@@ -1,4 +1,9 @@
 
+<div ng-if="!ready">
+  Please <a ui-sref="config">upload</a> the root certificates first.
+</div>
+
+
 <div class="row" ng-show="!pdfUrl">
   <div class="upload text-center" dropzone>
     <div class="upload-default">
