@@ -1,22 +1,28 @@
 
-<div class="row" ng-show="!pdfUrl">
-  <p>Drag the XML you want to verify.</p>
+<div ng-if="!ready">
+  Please <a ui-sref="config">upload</a> the root certificates first.
+</div>
+
+<div class="row" ng-show="ready && !pdfUrl">
   <div class="upload text-center" dropzone>
     <div class="upload-default">
-      <h6 class="bottom-padder-sm margin-15">Arrastra un archivo XML para validarlo</h6>
-      <button class="btn btn-remind btn-sm">o selecciona uno</button>
+      <h6 class="bottom-padder-sm margin-15">Drag the XML you want to verify.</h6>
+      <button class="btn">or click here to select one</button>
       <input accept-name="XML" accept="text/xml" text="true" class="file-upload-input" fileread="upload" required="true" type="file">
     </div>
   </div>
 </div>
-
 
 <div ng-show="pdfUrl">
   <h2>Signatures</h2>
 
   <ul class="list-unstyled">
     <li><strong>Document:</strong> {{ doc.name }}</li>
-    <li><strong>Original Hash:</strong> {{ doc.originalHash }}</li>
+    <li ng-class="{'text-success': oHashValid, 'text-danger': !oHashValid}">
+      <strong>Original Hash: </strong>
+      {{ doc.originalHash }}
+      <i class="glyphicon" ng-class="{'glyphicon-ok': oHashValid, 'glyphicon-remove': !oHashValid}"></i>
+    </li>
   </ul>
 
   <hr />
@@ -26,9 +32,12 @@
       <li><strong>Signed by:</strong> {{ signature.signer.name }} &lt;{{ signature.signer.email }}&gt;</li>
       <li><strong>Signed date:</strong> {{ signature.signedAt }}</li>
       <li><strong>RFC:</strong> {{ signature.signer.id }}</li>
-      <li><strong>Certificate number:</strong> {{ signature.certificate.getSerialNumberHex() }}</li>
-      <li>
-        <strong>Signature:</strong>
+      <li ng-class="{'text-success': signature.certificate.valid, 'text-danger': !signature.certificate.valid}">
+        <strong>Certificate number: <i class="glyphicon" ng-class="{'glyphicon-ok': signature.certificate.valid, 'glyphicon-remove': !signature.certificate.valid}"></i></strong>
+        <span>{{ signature.certificate.getSerialNumber() }}</span>
+      </li>
+      <li ng-class="{'text-success': signature.valid, 'text-danger': !signature.valid}">
+        <strong>Signature: <i class="glyphicon" ng-class="{'glyphicon-ok': signature.valid, 'glyphicon-remove': !signature.valid}"></i></strong>
         <span class="wrap-text">{{ signature.sig('base64') }}</span>
       </li>
     </ul>

@@ -10,24 +10,42 @@
 ###
 angular
   .module 'xmlFiestaUiApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch',
+    'ngAnimate'
+    'ngCookies'
+    'ngResource'
+    'ui.router'
+    'ngSanitize'
+    'ngTouch'
     'pdf'
+    'LocalStorageModule'
   ]
-  .config ($routeProvider) ->
-    $routeProvider
-      .when '/',
+  .config (localStorageServiceProvider) ->
+    localStorageServiceProvider.setPrefix('XMLFiesta')
+
+  .config ($stateProvider, $urlRouterProvider) ->
+    $stateProvider
+      .state 'home',
+        url: '/'
         templateUrl: 'views/main.html'
         controller: 'MainCtrl'
         controllerAs: 'main'
-      .when '/verify',
+
+      .state 'verify',
+        url: '/verify'
         templateUrl: 'views/verify.html'
         controller: 'VerifyCtrl'
         controllerAs: 'verify'
-      .otherwise
-        redirectTo: '/'
 
+      .state 'contact',
+        url: '/contact'
+        templateUrl: 'views/contact.html'
+        controller: 'ContactCtrl'
+        controllerAs: 'contact'
+
+      .state 'config',
+        url: '/config'
+        templateUrl: 'views/config.html'
+        controller: 'ConfigCtrl'
+        controllerAs: 'config'
+
+    $urlRouterProvider.otherwise('/')

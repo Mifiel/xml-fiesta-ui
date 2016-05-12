@@ -16,8 +16,18 @@ body {
   padding: 0;
 }
 
+.navbar-nav a:hover, .navbar-nav a.active {
+  color: #555 !important;
+  background-color: #e7e7e7 !important;
+}
+
+.navbar.navbar-default {
+  margin-bottom: 0;
+  border: 0;
+}
+
 .wrap-text {
-    word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
