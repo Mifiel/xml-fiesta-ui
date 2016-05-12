@@ -14,11 +14,37 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 body {
   padding: 0;
+  font-family: "Raleway", Arial, sans-serif;
+  color: #333;
+}
+
+h1,
+h3 {
+  font-weight: 600;
+}
+
+h2,
+h4 {
+  font-weight: 200;
+}
+
+h5,
+p {
+  font-weight: 400;
+}
+
+a {
+  color: #2bb673;
+}
+
+a:hover {
+  color: #333;
 }
 
 .navbar-nav a:hover, .navbar-nav a.active {
-  color: #555 !important;
-  background-color: #e7e7e7 !important;
+  color: #2bb673 !important;
+  font-weight: 600;
+  border-bottom: 2px solid #2bb673 !important;
 }
 
 .navbar.navbar-default {
@@ -26,9 +52,56 @@ body {
   border: 0;
 }
 
+.navbar-default {
+  background-color: #fff;
+}
+
+.navbar li a {
+  padding-top: 25px;
+}
+
+.navbar-header {
+  padding-top: 10px;
+
+  a {
+    font-weight: 600;
+  }
+}
+
 .wrap-text {
   word-wrap: break-word;
 }
+
+/* Primary button for final or important calls to action (Bright green) */
+
+.btn-success {
+  color: #ffffff;
+  text-shadow: none;
+  background-color: #37BC9B;
+  background-image: none;
+  border-radius: 4px;
+  border: 0px solid #37BC9B;
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success.focus,
+.btn-success:active,
+.btn-success.active,
+.btn-success.disabled,
+.btn-success[disabled],
+.open > .btn-success.dropdown-toggle {
+  color: #ffffff;
+  background-color: #555555;
+  border: 0px solid #555555;
+}
+
+.btn-lg {
+  font-size: 16px;
+  padding: 15px 20px;
+}
+
+
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -54,7 +127,8 @@ body {
 
 /* Custom page footer */
 .footer {
-  padding-top: 19px;
+  padding-top: 25px;
+  padding-bottom: 20px;
   color: #777;
   border-top: 1px solid #e5e5e5;
   position: fixed;
@@ -112,4 +186,9 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+
+.header {
+  border-bottom: 1px solid #eee;
 }
