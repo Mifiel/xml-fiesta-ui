@@ -2,8 +2,11 @@ module.exports = (config) ->
   'use strict'
   config.set
     autoWatch: true
+
     frameworks: [ 'jasmine' ]
+
     basePath: '../'
+
     files: [
       # bower:js
       'bower_components/jquery/dist/jquery.js'
@@ -23,22 +26,41 @@ module.exports = (config) ->
       'bower_components/angular-mocks/angular-mocks.js'
       # endbower
       # bower:coffee
-      '.tmp/scripts/**/*.js'
-      '.tmp/scripts/**/*.js'
-      '.tmp/spec/**/*.js'
+      'app/scripts/**/*.coffee'
+      'app/scripts/**/*.coffee'
+      'test/spec/**/*.coffee'
     ]
+
     exclude: []
+
     port: 8080
+
     browsers: [
-      # 'PhantomJS'
-      'Chrome'
+      'PhantomJS'
+      # 'Chrome'
     ]
-    plugins: [
-      'karma-phantomjs-launcher'
-      'karma-chrome-launcher'
-      'karma-jasmine'
-    ]
+
+    preprocessors:
+      '**/*.coffee': 'coffee'
+      'app/*/{*.coffee,!(test)/**/*.coffee}': 'coverage'
+
+    reporters: ['spec', 'coverage', 'clear-screen']
+
+    specReporter:
+      suppressSkipped: true
+
+    coverageReporter:
+      type : 'html'
+      dir : 'coverage/'
+      instrumenterOptions:
+        istanbul:
+          noCompact: true
+
     singleRun: false
+
     colors: true
+
+    concurrency: Infinity
+
     logLevel: config.LOG_INFO
   return

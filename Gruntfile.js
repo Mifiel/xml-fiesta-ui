@@ -215,15 +215,6 @@ module.exports = function (grunt) {
           dest: '.tmp/scripts',
           ext: '.js'
         }]
-      },
-      test: {
-        files: [{
-          expand: true,
-          cwd: 'test/spec',
-          src: '{,*/}*.coffee',
-          dest: '.tmp/spec',
-          ext: '.js'
-        }]
       }
     },
 
@@ -443,7 +434,6 @@ module.exports = function (grunt) {
         'compass:server'
       ],
       test: [
-        'coffee',
         'compass'
       ],
       dist: [
@@ -459,6 +449,10 @@ module.exports = function (grunt) {
       unit: {
         configFile: 'test/karma.conf.coffee',
         singleRun: true
+      },
+      start: {
+        configFile: 'test/karma.conf.coffee',
+        singleRun: false
       }
     }
   });
@@ -490,7 +484,7 @@ module.exports = function (grunt) {
     'concurrent:test',
     'postcss',
     'connect:test',
-    'karma'
+    'karma:start'
   ]);
 
   grunt.registerTask('build', [
