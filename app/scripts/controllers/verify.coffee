@@ -34,6 +34,11 @@ angular.module 'xmlFiestaUiApp'
       $scope.signatures = doc.signatures()
       $scope.signatures.forEach (signature) ->
         signature.valid = signature.valid(doc.originalHash)
+        signature.certificate.valid = false
+        angular.forEach $scope.certs, (el) ->
+          if !signature.certificate.valid
+            signature.certificate.valid = signature.certificate.isCa(el.content)
+            return
 
       currentBlob = new Blob([doc.pdfBuffer()], {type: 'application/pdf'})
       $scope.pdfUrl = URL.createObjectURL(currentBlob)
