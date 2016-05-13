@@ -18,9 +18,12 @@ module.exports = function (grunt) {
     ngtemplates: 'grunt-angular-templates'
   });
 
+  grunt.loadNpmTasks('grunt-build-control');
+
+  var app = require('./bower.json');
   // Configurable paths for the application
   var appConfig = {
-    app: require('./bower.json').appPath || 'app',
+    app: app.appPath || 'app',
     dist: 'dist'
   };
 
@@ -454,6 +457,21 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.coffee',
         singleRun: false
       }
+    },
+
+    buildcontrol: {
+      options: {
+        dir: 'dist',
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from version v.' + app.version
+      },
+      pages: {
+        options: {
+          remote: 'git@github.com:Mifiel/xml-fiesta-ui.git',
+          branch: 'gh-pages'
+        }
+      }
     }
   });
 
@@ -484,6 +502,15 @@ module.exports = function (grunt) {
     'concurrent:test',
     'postcss',
     'connect:test',
+    'karma:unit'
+  ]);
+
+  grunt.registerTask('test:ci', [
+    'clean:server',
+    'wiredep',
+    'concurrent:test',
+    'postcss',
+    'connect:test',
     'karma:start'
   ]);
 
@@ -507,7 +534,14 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'newer:jshint',
-    // 'test',
+    'test',
     'build'
+  ]);
+
+  grunt.registerTask('gh-pages', [
+    'newer:jshint',
+    'test',
+    'build',
+    'buildcontrol'
   ]);
 };
