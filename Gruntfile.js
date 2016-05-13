@@ -505,6 +505,15 @@ module.exports = function (grunt) {
     'karma:unit'
   ]);
 
+  grunt.registerTask('test:ci', [
+    'clean:server',
+    'wiredep',
+    'concurrent:test',
+    'postcss',
+    'connect:test',
+    'karma:start'
+  ]);
+
   grunt.registerTask('build', [
     'clean:dist',
     'wiredep',
