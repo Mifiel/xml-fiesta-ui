@@ -27,14 +27,15 @@ angular.module 'xmlFiestaUiApp'
       certs = localStorageService.get('rootCerts') || {}
       angular.forEach event.target.files, (file) ->
         reader = new FileReader
-        reader.onload = (loadEvent) ->
+        reader.addEventListener 'load', (loadEvent) ->
           certs[file.name] =
             name: file.name
             content: loadEvent.target.result
 
           localStorageService.set('rootCerts', certs)
           angular.element('.cert-uploader').val('')
-        reader.onloadend = ->
+
+        reader.addEventListener 'loadend', ->
           fetchRootCerts()
           $scope.$apply()
         reader.readAsText(file)
