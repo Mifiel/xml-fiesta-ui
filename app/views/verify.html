@@ -20,8 +20,12 @@
     <li><strong>Document:</strong> {{ doc.name }}</li>
     <li ng-class="{'text-success': oHashValid, 'text-danger': !oHashValid}">
       <strong>Original Hash: </strong>
-      {{ doc.originalHash }}
+      <span>{{ doc.originalHash }}</span>
       <i class="glyphicon" ng-class="{'glyphicon-ok': oHashValid, 'glyphicon-remove': !oHashValid}"></i>
+      <a href="" ng-show="!oHashValid" ng-click="showOHashError = !showOHashError">Why?</a>
+      <div class="alert alert-danger alert-incorrect" ng-show="showOHashError" role="alert">
+        The original hash is incorrect
+      </div>
     </li>
   </ul>
 
@@ -35,10 +39,22 @@
       <li ng-class="{'text-success': signature.certificate.valid, 'text-danger': !signature.certificate.valid}">
         <strong>Certificate number: <i class="glyphicon" ng-class="{'glyphicon-ok': signature.certificate.valid, 'glyphicon-remove': !signature.certificate.valid}"></i></strong>
         <span>{{ signature.certificate.getSerialNumber() }}</span>
+        <a href="" ng-show="!signature.certificate.valid" ng-click="signature.showCertError = !signature.showCertError">Why?</a>
+        <div class="alert alert-danger alert-incorrect" ng-show="signature.showCertError" role="alert">
+          The <strong>certificate</strong> was not created with any of the
+          <strong>root certificates</strong> that provided in 'Configuration' page.<br>
+          Please provide new ones. If you still see this error,
+          it means the certificate was not issued by who says.
+        </div>
       </li>
       <li ng-class="{'text-success': signature.valid, 'text-danger': !signature.valid}">
         <strong>Signature: <i class="glyphicon" ng-class="{'glyphicon-ok': signature.valid, 'glyphicon-remove': !signature.valid}"></i></strong>
         <span class="wrap-text">{{ signature.sig('base64') }}</span>
+        <a href="" ng-show="!signature.valid" ng-click="signature.showValidError = !signature.showValidError">Why?</a>
+        <div class="alert alert-danger alert-incorrect" ng-show="signature.showValidError" role="alert">
+          The <strong>signature</strong> is not valid.<br>
+          The private key of the certificate did not sign this document.
+        </div>
       </li>
     </ul>
   </div>
