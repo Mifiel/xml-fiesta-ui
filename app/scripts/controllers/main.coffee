@@ -9,9 +9,4 @@
 ###
 angular.module 'xmlFiestaUiApp'
   .controller 'MainCtrl', ->
-    @awesomeThings = [
-      'HTML5 Boilerplate'
-      'AngularJS'
-      'Karma'
-    ]
     return

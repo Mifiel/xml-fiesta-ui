@@ -22,7 +22,7 @@ angular.module 'xmlFiestaUiApp'
             return
           return
 
-        reader.onload = (loadEvent) ->
+        reader.addEventListener 'load', (loadEvent) ->
           scope.$apply ->
             result = loadEvent.target.result
             scope.fileread =
@@ -33,11 +33,6 @@ angular.module 'xmlFiestaUiApp'
                 data: ''
                 hash: ''
                 raw: result
-            if attributes.sha256
-              scope.fileread.result.hash = sha256(scope.fileread.result.raw)
-            # empty the value of the field so the user
-            # can select the same file again in case of cancel
-            # $(element).val('');
             return
           return
 
