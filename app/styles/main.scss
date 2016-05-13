@@ -68,6 +68,17 @@ a:hover {
   }
 }
 
+.navbar-brand {
+  display: inline-block;
+}
+
+p.version {
+  color: #aaa;
+  display: inline-block;
+  padding-top: 16px;
+  padding-right: 30px;
+}
+
 .wrap-text {
   word-wrap: break-word;
 }
@@ -77,10 +88,10 @@ a:hover {
 .btn-success {
   color: #ffffff;
   text-shadow: none;
-  background-color: #37BC9B;
+  background-color: #2bb673;
   background-image: none;
   border-radius: 4px;
-  border: 0px solid #37BC9B;
+  border: 0px solid #2bb673;
 }
 
 .btn-success:hover,
