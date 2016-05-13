@@ -502,7 +502,7 @@ module.exports = function (grunt) {
     'concurrent:test',
     'postcss',
     'connect:test',
-    'karma:start'
+    'karma:unit'
   ]);
 
   grunt.registerTask('build', [
@@ -527,5 +527,12 @@ module.exports = function (grunt) {
     'newer:jshint',
     'test',
     'build'
+  ]);
+
+  grunt.registerTask('gh-pages', [
+    'newer:jshint',
+    'test',
+    'build',
+    'buildcontrol'
   ]);
 };
