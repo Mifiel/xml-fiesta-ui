@@ -85,6 +85,14 @@ p.version {
 
 /* Primary button for final or important calls to action (Bright green) */
 
+
+button {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
 .btn-success {
   color: #ffffff;
   text-shadow: none;
@@ -112,7 +120,27 @@ p.version {
   padding: 15px 20px;
 }
 
+.btn-delete {
+  color: #fff;
+  text-shadow: none;
+  background-color: #ED5565;
+  background-image: none;
+  border-radius: 4px;
+  border: 1px solid #ED5565;
+}
 
+.btn-delete:hover,
+.btn-delete:focus,
+.btn-delete.focus,
+.btn-delete:active,
+.btn-delete.active,
+.btn-delete.disabled,
+.btn-delete[disabled],
+.open > .btn-delete.dropdown-toggle {
+  color: #ffffff;
+  background-color: #555;
+  border: 1px solid #555;
+}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -179,7 +207,7 @@ p.version {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 840px;
   }
 
   /* Remove the padding we set earlier */
@@ -202,4 +230,131 @@ p.version {
 
 .header {
   border-bottom: 1px solid #eee;
+}
+
+.verify {
+  
+  padding-top: 30px;
+  padding-bottom: 120px;
+
+  #instructions {
+    text-align: center;
+
+    p {
+      text-align: justify;
+    }
+
+    object {
+      padding-top: 20px;
+    }
+
+  }
+
+  .text-success {
+    color: #2bb673;
+  }
+
+  .text-danger {
+    color: #ED5565;
+  }
+
+  .list-unstyled {
+    li {
+      margin: 5px 0px;
+
+      strong {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  td {
+    padding: 7px 40px;
+  }
+
+  table#signers {
+    margin-top: 50px;
+  }
+
+  table#general-info {
+    margin-top: 30px;
+  }
+
+}
+
+.config {
+  padding-top: 30px;
+  padding-bottom: 120px;
+
+  p.help-block {
+    margin: 0px;
+  }
+
+  .upload-certificates {
+    padding-bottom: 25px;
+    padding-top: 30px;
+  }
+
+  .proceed-verify {
+    padding-bottom: 20px;
+    margin-top: -40px;
+    border-bottom: 1px solid #ddd;
+
+    button {
+      display: inline-block;
+    }
+
+    h4 {
+      margin-right: 40px;
+      display: inline-block;
+    }
+
+    .btn-lg {
+      font-size: 14px;
+      padding: 14px 30px;
+    }
+  }
+
+  .root-certificates {
+    padding-top: 25px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 20px 30px;
+
+    li {
+      margin: 5px 0px;
+    }
+
+    h4 {
+      font-weight: 600;
+    }
+  }
+
+  .btn-delete {
+    display: inline-block;
+  }
+
+  p.delete-text {
+    color: #777;
+    font-size: 13px;
+    display: inline-block;
+
+  }
+}
+
+.top-padder-md {
+  padding-top: 20px;
+}
+
+.margin-right-sm {
+  margin-right: 10px;
+}
+
+.bottom-padder-md {
+  padding-bottom: 20px;
+}
+
+.center {
+  text-align: center;
 }

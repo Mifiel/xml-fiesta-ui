@@ -17,50 +17,26 @@
       z-index: 1;
   }
   .upload-default {
-      padding: 40px 20px;
-      border: 4px dotted #e7f0ed;
-  }
-  .upload-create {
-      padding: 120px 20px;
-      border: 4px dotted #e7f0ed;
-  }
-  .upload-endorsables {
-      padding: 20px 10px;
-      padding-bottom: 35px;
-      border: 4px dotted #dee6ef;
-  }
-  .upload-error {
       padding: 60px 20px;
-      border: 4px dotted #f2c8c2;
-      background-color: #FBEEEC;
-      color: #E9573F;
-  }
-  .upload-success {
-      padding: 60px 20px;
-      border: 4px solid #97d3bc;
-      background-color: #f1f9f6;
-      color: #37BC9B;
-  }
-  .upload-neutral {
-      padding: 60px 20px;
-      border: 4px dotted #dddddd;
-      color: #777777;
-  }
-  .form-control {
-      background-color: #ffffff;
-      border: 1px solid #eeeeee;
+      border: 4px dotted #ddd;
   }
 
   .btn {
-    background-color: #37BC9B;
-    border-color: #37BC9B;
+    background-color: #2bb673;
+    border-color: #2bb673;
     color: white;
+    padding: 12px 20px;
   }
 
   &.image-dropping,
   &.image-upload-wrap:hover {
-    background-color: #e7f0ed;
-    border-color: #ffffff;
+    background-color: #2bb673;
+    border-color: #fff;
+    color: #fff;
+
+    .btn {
+      border-color: #fff;
+    }
   }
 }
 
