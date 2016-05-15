@@ -30,52 +30,84 @@
         <input accept-name="XML" accept="text/xml" text="true" class="file-upload-input" fileread="upload" required="true" type="file">
       </div>
     </div>
+</div>
+
+<div ng-show="pdfUrl">
+  <h2>Signatures</h2>
+
+  <div class="row top-padder-md">
+    <div class="col-md-3">
+      <strong>Document Name</strong>
+    </div>
+    <div class="col-md-9"> 
+      {{ doc.name }}
+    </div>
   </div>
 
-  <div ng-show="pdfUrl">
-    <h2 class="bottom-padder-md center">Signatures</h2>
-    <div class="table">
-      <table id="general-info">
-        <tr>
-          <td><strong>Document Name</strong></td>
-          <td>{{ doc.name }}</td>
-        </tr>
-        <tr>
-          <td>
-            <strong ng-class="{'text-success': oHashValid, 'text-danger': !oHashValid}">Original Hash <i class="glyphicon" ng-class="{'text-success': oHashValid, 'text-danger': !oHashValid, 'glyphicon-ok': oHashValid, 'glyphicon-remove': !oHashValid}"></i></strong>
-          </td>
-          <td>{{ doc.originalHash }}</td>
-        </tr>
-      </table>
-      <table id="signers" ng-repeat="signature in signatures">
-        <tr>
-          <td><strong>Signed by</strong></td>
-          <td>{{ signature.signer.name }} &lt;{{ signature.signer.email }}&gt;</td>
-        </tr>
-        <tr>
-          <td><strong>RFC</strong></td>
-          <td>{{ signature.signer.id }}</td>
-        </tr>
-        <tr>
-          <td><strong>Signed date</strong></td>
-          <td>{{ signature.signedAt }}</td>
-        </tr>
-        <tr>
-         <td>
-            <strong ng-class="{'text-success': signature.certificate.valid, 'text-danger': !signature.certificate.valid}">Certificate number <i class="glyphicon" ng-class="{'text-success': signature.certificate.valid, 'text-danger': !signature.certificate.valid, 'glyphicon-ok': signature.certificate.valid, 'glyphicon-remove': !signature.certificate.valid}"></i></strong>
-          </td>
-          <td>{{ signature.certificate.getSerialNumber() }}</td>
-        </tr>
-        <tr>
-          <td> 
-            <strong ng-class="{'text-success': signature.valid, 'text-danger': !signature.valid}">Signature <i class="glyphicon" ng-class="{'text-success': signature.valid, 'text-danger': !signature.valid, 'glyphicon-ok': signature.valid, 'glyphicon-remove': !signature.valid}"></i> </strong>
-          </td>
-          <td>{{ signature.sig('base64') }}</td>
-        </tr>
-      </table>
+  <div class="row">
+    <div class="col-md-3" ng-class="{'text-success': oHashValid, 'text-danger': !oHashValid}">
+      <strong>Original Hash <i class="glyphicon" ng-class="{'glyphicon-ok': oHashValid, 'glyphicon-remove': !oHashValid}"></i></strong>
+    </div>
+    <div class="col-md-9"> 
+      {{ doc.originalHash }}
+      <a href="" ng-show="!oHashValid" ng-click="showOHashError = !showOHashError">Why?</a>
+      <div class="alert alert-danger alert-incorrect" ng-show="showOHashError" role="alert">
+        The original hash is incorrect
+      </div>      
+    </div>
+  </div>
+
+  <div class="row top-padder-md" id="signers" ng-repeat="signature in signatures">
+    <div class="col-md-3">
+      <strong>Signed By</strong>
+    </div>
+    <div class="col-md-9"> 
+      {{ signature.signer.name }} &lt;{{ signature.signer.email }}&gt;    
     </div>
 
-    <p class="top-padder-md bottom-padder-md center"><strong>You can review the document that was signed below</strong></p>
+    <div class="col-md-3">
+      <strong>RFC</strong>
+    </div>
+    <div class="col-md-9"> 
+      {{ signature.signer.id }}    
+    </div>
+
+    <div class="col-md-3">
+      <strong>Date Signed</strong>
+    </div>
+    <div class="col-md-9"> 
+      {{ signature.signedAt }}
+    </div>
+
+    <div class="col-md-3" ng-class="{'text-success': signature.certificate.valid, 'text-danger': !signature.certificate.valid}">
+      <strong>Certificate Number <i class="glyphicon" ng-class="{'glyphicon-ok': signature.certificate.valid, 'glyphicon-remove': !signature.certificate.valid}"></i></strong>
+    </div>
+    <div class="col-md-9"> 
+      {{ signature.certificate.getSerialNumber() }}
+      <a href="" ng-show="!signature.certificate.valid" ng-click="signature.showCertError = !signature.showCertError">Why?</a>
+      <div class="alert alert-danger alert-incorrect" ng-show="signature.showCertError" role="alert">
+        The <strong>certificate</strong> was not created with any of the <strong>root certificates</strong> that provided in 'Configuration' page.<br>
+        Please provide new ones. If you still see this error, it means the certificate was not issued by who says.
+      </div>      
+    </div>
+
+    <div class="col-md-3" ng-class="{'text-success': signature.valid, 'text-danger': !signature.valid}">
+      <strong>Signature <i class="glyphicon" ng-class="{'glyphicon-ok': signature.valid, 'glyphicon-remove': !signature.valid}"></i></strong>
+    </div>
+    <div class="col-md-9"> 
+      {{ signature.sig('base64') }}
+      <a href="" ng-show="!signature.valid" ng-click="signature.showValidError = !signature.showValidError">Why?</a>
+      <div class="alert alert-danger alert-incorrect" ng-show="signature.showValidError" role="alert">
+        The <strong>signature</strong> is not valid.<br>
+        The private key of the certificate did not sign this document.
+      </div>    
+    </div>
+  </div>
+
+  <div class="row top-padder-md bototm-padder-md center">
+    <p><strong>You can review the document that was signed below</strong></p>
+  </div>
+  <div>
     <hr>
     <div id="pdf-container" class="center top-padder-md">
       <ng-pdf template-url="views/pdfViewer.html"></ng-pdf>

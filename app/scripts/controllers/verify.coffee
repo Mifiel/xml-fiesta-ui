@@ -36,6 +36,7 @@ angular.module 'xmlFiestaUiApp'
         signature.valid = signature.valid(doc.originalHash)
         signature.certificate.valid = false
         angular.forEach $scope.certs, (el) ->
+          # dont keep verifying if its already verifi
           if !signature.certificate.valid
             signature.certificate.valid = signature.certificate.isCa(el.content)
             return

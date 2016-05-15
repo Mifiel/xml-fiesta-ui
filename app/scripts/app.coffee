@@ -18,9 +18,15 @@ angular
     'ngTouch'
     'pdf'
     'LocalStorageModule'
+    'pascalprecht.translate'
   ]
-  .config (localStorageServiceProvider) ->
+  .config (localStorageServiceProvider, $translateProvider, TRANSLATIONS_EN, TRANSLATIONS_ES) ->
     localStorageServiceProvider.setPrefix('XMLFiesta')
+    $translateProvider
+      .translations('en', TRANSLATIONS_EN)
+      .translations('es', TRANSLATIONS_ES)
+      .preferredLanguage('es')
+      .fallbackLanguage('en')
 
   .config ($stateProvider, $urlRouterProvider) ->
     $stateProvider
