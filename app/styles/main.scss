@@ -360,3 +360,21 @@ button {
   text-align: center;
 }
 
+/* CSS for the Email Us banner */
+
+.contact {
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+  margin-bottom: 80px;
+  padding: 20px 30px;
+  text-align: center;
+
+  h3 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+
+  .btn-md {
+    padding: 12px 20px;
+  }
+}
