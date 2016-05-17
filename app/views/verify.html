@@ -1,32 +1,32 @@
 <div class="verify">
   <div id="instructions" ng-if="!ready">
     <div class="row">
-      <h2>¿Cómo Funciona?</h2>
+      <h2>{{ 'VERIFY.TITTLE' | translate }}</h2>
     </div>
     <div class="row bottom-padder-md">
       <div class="col-md-4 col-md-offset-0 col-sm-10 col-sm-offset-1 col-md-offset-0 col-sm-10 col-sm-offset-1">
         <object data="images/upload_certificates.svg" type="image/svg+xml" alt="Upload Certificates"></object>
-        <p>First you will need to upload the root certificates corresponding to your country and type of electronic signature being used (e.g. Mexico - SAT)</p>
+        <p>{{ 'VERIFY.ROOT' | translate }}</p>
       </div>
       <div class="col-md-4 col-md-offset-0 col-sm-10 col-sm-offset-1">
         <object data="images/upload_xml.svg" type="image/svg+xml" alt="Upload XML"></object>
-        <p>Next, you need to find the .xml file type sent to you after signing the document, which contains information regarding the document and its signers and will be necessary to verify the information.</p>
+        <p>{{ 'VERIFY.XML' | translate }}</p>
       </div>
       <div class="col-md-4 col-md-offset-0 col-sm-10 col-sm-offset-1">
         <object data="images/verify.svg" type="image/svg+xml" alt="Verify information"></object>
-        <p>Finally, once you receive the results of the verification, ensure that all fields have a check mark next to it. If there are any errors, you should review the reason for the error and try again or contact the signers.</p>
+        <p>{{ 'VERIFY.VALIDATION' | translate }}</p>
       </div>
     </div>
     <div class="row top-padder-md">
-      <button class="btn-lg btn-success" ui-sref="config">Get Started</button>
+      <button class="btn-lg btn-success" ui-sref="config">{{ 'VERIFY.GET_STARTED' | translate }}</button>
     </div>
   </div>
 
   <div class="row" ng-show="ready && !pdfUrl">
     <div class="upload text-center" dropzone>
       <div class="upload-default">
-        <h5 class="bottom-padder-md">Drag the XML you want to verify.</h5>
-        <button class="btn">or click here to select one</button>
+        <h5 class="bottom-padder-md">{{ 'VERIFY.DRAG' | translate }}</h5>
+        <button class="btn">{{ 'VERIFY.SELECT' | translate }}</button>
         <input accept-name="XML" accept="text/xml" text="true" class="file-upload-input" fileread="upload" required="true" type="file">
       </div>
     </div>

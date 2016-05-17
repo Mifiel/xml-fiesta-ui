@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-md-12">
       <div ng-show="certs.length > 0" class="proceed-verify">
-        <h4>Have you uploaded all the Root certificates?</h4>
-        <button class="btn-lg btn-success" ui-sref="verify">Proceed to verify</button>
+        <h4>{{ 'CONFIG.CERTIFICATES_LOADED' | translate }}</h4>
+        <button class="btn-lg btn-success" ui-sref="verify">{{ 'CONFIG.VER_BUTTON' | translate }}</button>
       </div>
     </div>
   </div>
@@ -11,16 +11,16 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group upload-certificates">
-        <h3 for="cert-uploader">Select the Root certificates</h3>
-        <p class="help-block">Be sure to select ALL of the Root certificates of the corresponding certificate authority. You can select several files at once.</p>
-        <p class="help-block bottom-padder-md">Once you have uploaded the root certificates, you will see a button that allows you to proceed to upload your .xml file.</p>
+        <h3 for="cert-uploader">{{ 'CONFIG.SELECT' | translate }}</h3>
+        <p class="help-block">{{ 'CONFIG.ALL' | translate }}</p>
+        <p class="help-block bottom-padder-md">{{ 'CONFIG.AFTER' | translate }}</p>
         <input id="cert-uploader" type="file" accept=".crt" class="cert-uploader" custom-on-change="setRootCerts" multiple="true">
       </div>
     </div>
     <div class="col-md-5 col-md-offset-1">
       <div ng-show="certs.length > 0" class="root-certificates">
         <h4>
-          Root Certificates Uploaded by You
+          {{ 'CONFIG.LOADED' | translate }}
         </h4>
         <ul class="bottom-padder-md">
           <li ng-repeat="cert in certs | orderBy:'name'">
@@ -28,8 +28,7 @@
           </li>
         </ul>
       </div>
-      <div ng-show="certs.length > 0">
-        <p class="delete-text top-padder-md">Delete all certificates <b>(this action cannot be undone)</b></p>
+      <div ng-show="certs.length > 0">{{ 'CONFIG.DELETE' | translate }}<b>{{ 'CONFIG.UNDONE' | translate }}</b></p>
         <button ng-click="clear()" class="btn btn-md btn-delete glyphicon glyphicon-trash"></button>
       </div>
     </div>
