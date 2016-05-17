@@ -1,0 +1,11 @@
+{
+  "generator-karma": {
+    "base-path": "../",
+    "frameworks": "jasmine",
+    "browsers": "PhantomJS",
+    "app-files": "app/scripts/**/*.coffee",
+    "files-comments": "bower:js,endbower,bower:coffee,endbower",
+    "bower-components-path": "bower_components",
+    "test-files": "test/mock/**/*.coffee,test/spec/**/*.coffee"
+  }
+}

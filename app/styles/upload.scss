@@ -1,0 +1,62 @@
+.upload {
+  position: relative;
+  * {
+      z-index: 2;
+  }
+  .file-upload-input {
+      position: absolute;
+      margin: 0;
+      left: 0;
+      top: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      outline: none;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 1;
+  }
+  .upload-default {
+      padding: 60px 20px;
+      border: 4px dotted #ddd;
+  }
+
+  .btn {
+    background-color: #2bb673;
+    border-color: #2bb673;
+    color: white;
+    padding: 12px 20px;
+  }
+
+  &.image-dropping,
+  &.image-upload-wrap:hover {
+    background-color: #2bb673;
+    border-color: #fff;
+    color: #fff;
+
+    .btn {
+      border-color: #fff;
+    }
+  }
+}
+
+#pdf-container {
+  margin-top: 40px;
+
+  .pdf-controls {
+    width: 100%;
+    display: block;
+  }
+
+  .fixed {
+      position: fixed;
+      top: 0;
+      left: calc(50% - 480px);
+      z-index: 100;
+      width: 100%;
+      padding: 1em;
+      background: rgba(238, 238, 238, .9);
+      width: 960px;
+  }
+
+}
