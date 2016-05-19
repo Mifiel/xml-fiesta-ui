@@ -20,13 +20,15 @@ angular
     'LocalStorageModule'
     'pascalprecht.translate'
   ]
-  .config (localStorageServiceProvider, $translateProvider, TRANSLATIONS_EN, TRANSLATIONS_ES) ->
+  .config (localStorageServiceProvider, $translateProvider, $compileProvider, TRANSLATIONS_EN, TRANSLATIONS_ES) ->
     localStorageServiceProvider.setPrefix('XMLFiesta')
     $translateProvider
       .translations('en', TRANSLATIONS_EN)
       .translations('es', TRANSLATIONS_ES)
       .preferredLanguage('es')
       .fallbackLanguage('en')
+
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|blob):/);
 
   .config ($stateProvider, $urlRouterProvider) ->
     $stateProvider
