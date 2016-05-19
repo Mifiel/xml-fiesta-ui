@@ -28,6 +28,13 @@ describe 'VerifyCtrl', ->
     initController()
     expect(controller).not.toBe null
 
+  describe 'clear', ->
+    it 'should clear all variables', ->
+      initController()
+      $scope.pdfUrl = 'blah'
+      $scope.clear()
+      expect($scope.pdfUrl).toBe null
+
   describe 'without certs', ->
     beforeEach ->
       spyOn(localStorageService, 'get').and.returnValue null
@@ -58,7 +65,7 @@ describe 'VerifyCtrl', ->
         expect($scope.doc).toBe null
         expect($scope.signatures).toBeUndefined()
 
-    describe 'when user uploads a XML', ->
+    describe 'parseXML', ->
       mockXMLDocument =
         document:
           signatures: ->
@@ -76,13 +83,17 @@ describe 'VerifyCtrl', ->
 
       beforeEach ->
         spyOn(XMLFiesta.Document, 'fromXml').and.returnValue mockXMLDocument
-        $scope.upload =
-          result: raw: 'blah'
-        $scope.$apply()
+        $scope.parseXML('blah')
 
       it 'should assign signatures', ->
         expect($scope.signatures.length).toBe 2
 
       it 'should assign a pdfUrl', ->
         expect($scope.pdfUrl).not.toBe null
+
+    describe '$watch upload', ->
+      it 'asd', ->
+        $scope.upload =
+          result: raw: 'blah'
+        $scope.$apply()
 

@@ -12,8 +12,8 @@
     <div class="col-md-6">
       <div class="form-group upload-certificates">
         <h3 for="cert-uploader">{{ 'CONFIG.SELECT' | translate }}</h3>
-        <p class="help-block">{{ 'CONFIG.ALL' | translate }}</p>
-        <p class="help-block bottom-padder-md">{{ 'CONFIG.AFTER' | translate }}</p>
+        <p class="help-block top-padder-md">{{ 'CONFIG.ALL' | translate }}</p>
+        <p class="help-block top-padder-md bottom-padder-md">{{ 'CONFIG.AFTER' | translate }}</p>
         <input id="cert-uploader" type="file" accept=".crt" class="cert-uploader" custom-on-change="setRootCerts" multiple="true">
       </div>
     </div>
