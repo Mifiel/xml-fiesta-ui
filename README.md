@@ -4,16 +4,18 @@ Offline verifyer for Mifiel generated XMLs. Visit http://mifiel.github.io/xml-fi
 
 ## Development
 
-Before you start to develop you must install node, npm and bower.
+Before you start to develop you must:
 
-> You will need to input your password in steps **1** and **2**.
+> You will need to input your password in steps **2** to **5**.
 
 1. Download node at https://nodejs.org/ and install it
 2. Install npm: `sudo npm install npm -g`
 3. Install bower: `sudo npm install bower -g`
-4. Clone the repo: `git clone git@github.com:Mifiel/xml-fiesta-ui.git && cd xml-fiesta-ui`
-5. Install dependencies: `npm install && bower install`
-6. Run the server and you're ready to party: `grunt serve`
+4. Install grunt: `sudo npm install grunt-cli -g`
+5. Install compass: `sudo gem install compass`
+6. Clone the repo: `git clone git@github.com:Mifiel/xml-fiesta-ui.git && cd xml-fiesta-ui`
+7. Install dependencies: `npm install && bower install`
+8. Run the server and you're ready to party: `grunt serve`
 
 ## Build
 
