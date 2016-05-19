@@ -1,6 +1,6 @@
 {
   "name": "xml-fiesta-ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "dependencies": {
     "angular": "^1.4.0",
     "bootstrap-sass-official": "^3.2.0",
