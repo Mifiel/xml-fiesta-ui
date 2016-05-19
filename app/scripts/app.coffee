@@ -44,11 +44,11 @@ angular
         controller: 'VerifyCtrl'
         controllerAs: 'verify'
 
-      .state 'contact',
-        url: '/contact'
-        templateUrl: 'views/contact.html'
-        controller: 'ContactCtrl'
-        controllerAs: 'contact'
+      .state 'how',
+        url: '/how'
+        templateUrl: 'views/how.html'
+        controller: 'HowCtrl'
+        controllerAs: 'how'
 
       .state 'config',
         url: '/config'
