@@ -6,6 +6,7 @@ angular.module 'xmlFiestaUiApp'
       FAQ: '¿Cómo Funciona?'
       CONTACT: 'Contacto'
       CONFIG: 'Configuración'
+
     VERIFY:
       TITLE: '¿Cómo Funciona?'
       ROOT: 'Carga los certificados raíz correspondientes. Actualmente este validador sólo funciona con certificados emitidos por el SAT de México.'
@@ -29,6 +30,7 @@ angular.module 'xmlFiestaUiApp'
       SIGNATURE: 'Firma '
       WRONG_CERT: 'El certificado no fue firmado con ninguno de los certificados raíz que cargaste en la página de configuración. Asegúrate de haber cargado todos los certificados raíz de la autoridad que emitió el certificado usado para firmar. Si este error persiste significa que el certificado no fue emitido por la autoridad certificadora dueña de los certificados raíz.'
       WRONG_SIG: 'La Firma no es válida, pudo haber sido modificada o no se usó la llave privada correspondiente al certificado mencionado anteriormente.'
+      LOADING: 'Validando documento...'
 
     FAQ:
       ABOUT: 'Acerca de'

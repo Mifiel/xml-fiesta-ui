@@ -25,14 +25,19 @@
   <div class="row" ng-show="ready && !pdfUrl">
     <div class="upload text-center" dropzone>
       <div class="upload-default">
-        <h5 class="bottom-padder-md">{{ 'VERIFY.DRAG' | translate }}</h5>
-        <button class="btn">{{ 'VERIFY.SELECT' | translate }}</button>
-        <input accept-name="XML" accept="text/xml" text="true" class="file-upload-input" fileread="upload" required="true" type="file">
+        <div ng-show="!loading">
+          <h5 class="bottom-padder-md">{{ 'VERIFY.DRAG' | translate }}</h5>
+          <button class="btn">{{ 'VERIFY.SELECT' | translate }}</button>
+          <input accept-name="XML" accept="text/xml" text="true" class="file-upload-input" fileread="upload" required="true" type="file">
+        </div>
+        <div ng-show="loading">
+          <h4>{{ 'VERIFY.LOADING' | translate }}</h4>
+        </div>
       </div>
     </div>
   </div>
 
-  <div ng-show="pdfUrl">
+  <div ng-show="pdfUrl && !loading">
     <h2 class="center">{{ 'VERIFY.VALIDATIONS' | translate }}</h2>
 
     <p class="help-block">{{ 'VERIFY.REMINDER' | translate }}</p>
@@ -108,7 +113,7 @@
     </div>
     
     <div class="row bottom-padder-lg center">
-      <button class="btn-lg btn-success" ui-sref="#">{{ 'VERIFY.NEW_DOC' | translate }}</button>
+      <button class="btn-lg btn-success" ng-click="clear()">{{ 'VERIFY.NEW_DOC' | translate }}</button>
     </div>
 
     <hr>
