@@ -30,14 +30,14 @@ angular
 
   .config ($stateProvider, $urlRouterProvider) ->
     $stateProvider
-      .state 'home',
-        url: '/'
-        templateUrl: 'views/main.html'
-        controller: 'MainCtrl'
-        controllerAs: 'main'
+      # .state 'home',
+      #   url: '/'
+      #   templateUrl: 'views/main.html'
+      #   controller: 'MainCtrl'
+      #   controllerAs: 'main'
 
       .state 'verify',
-        url: '/verify'
+        url: '/'
         templateUrl: 'views/verify.html'
         controller: 'VerifyCtrl'
         controllerAs: 'verify'
