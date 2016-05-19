@@ -1,0 +1,380 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+@import 'upload';
+@import 'verify';
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+  font-family: "Raleway", Arial, sans-serif;
+  color: #333;
+}
+
+h1,
+h3 {
+  font-weight: 600;
+}
+
+h2,
+h4 {
+  font-weight: 200;
+}
+
+h5,
+p {
+  font-weight: 400;
+}
+
+a {
+  color: #2bb673;
+}
+
+a:hover {
+  color: #333;
+}
+
+.navbar-nav a:hover, .navbar-nav a.active {
+  color: #2bb673 !important;
+  font-weight: 600;
+  border-bottom: 2px solid #2bb673 !important;
+}
+
+.navbar.navbar-default {
+  margin-bottom: 0;
+  border: 0;
+}
+
+.navbar-default {
+  background-color: #fff;
+}
+
+.navbar li a {
+  padding-top: 25px;
+}
+
+.navbar-header {
+  padding-top: 10px;
+
+  a {
+    font-weight: 600;
+  }
+}
+
+.navbar-brand {
+  display: inline-block;
+}
+
+p.version {
+  color: #aaa;
+  display: inline-block;
+  padding-top: 16px;
+  padding-right: 30px;
+}
+
+.wrap-text {
+  word-wrap: break-word;
+}
+
+/* Primary button for final or important calls to action (Bright green) */
+
+
+button {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.btn-success {
+  color: #ffffff;
+  text-shadow: none;
+  background-color: #2bb673;
+  background-image: none;
+  border-radius: 4px;
+  border: 0px solid #2bb673;
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success.focus,
+.btn-success:active,
+.btn-success.active,
+.btn-success.disabled,
+.btn-success[disabled],
+.open > .btn-success.dropdown-toggle {
+  color: #ffffff;
+  background-color: #555555;
+  border: 0px solid #555555;
+}
+
+.btn-lg {
+  font-size: 16px;
+  padding: 15px 20px;
+}
+
+.btn-delete {
+  color: #fff;
+  text-shadow: none;
+  background-color: #ED5565;
+  background-image: none;
+  border-radius: 4px;
+  border: 1px solid #ED5565;
+}
+
+.btn-delete:hover,
+.btn-delete:focus,
+.btn-delete.focus,
+.btn-delete:active,
+.btn-delete.active,
+.btn-delete.disabled,
+.btn-delete[disabled],
+.open > .btn-delete.dropdown-toggle {
+  color: #ffffff;
+  background-color: #555;
+  border: 1px solid #555;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 25px;
+  padding-bottom: 20px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+  position: fixed;
+  background: white;
+  bottom: 0;
+  width: 100%;
+}
+
+.content {
+  margin-bottom: 50px;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+
+  p + h4 {
+    margin-top: 28px;
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 840px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+
+.header {
+  border-bottom: 1px solid #eee;
+}
+
+.verify {
+  
+  padding-top: 30px;
+  padding-bottom: 120px;
+
+  #instructions {
+    text-align: center;
+
+    p {
+      text-align: justify;
+    }
+
+    object {
+      padding-top: 20px;
+    }
+
+  }
+
+  .text-success {
+    color: #2bb673;
+  }
+
+  .text-danger {
+    color: #ED5565;
+  }
+
+  .list-unstyled {
+    li {
+      margin: 5px 0px;
+
+      strong {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  td {
+    padding: 7px 40px;
+  }
+
+  table#signers {
+    margin-top: 50px;
+  }
+
+  table#general-info {
+    margin-top: 30px;
+  }
+
+}
+
+.config {
+  padding-top: 30px;
+  padding-bottom: 120px;
+
+  p.help-block {
+    margin: 0px;
+  }
+
+  .upload-certificates {
+    padding-bottom: 25px;
+    padding-top: 40px;
+  }
+
+  .proceed-verify {
+    padding-bottom: 20px;
+    margin-top: -40px;
+    border-bottom: 1px solid #ddd;
+
+    button {
+      display: inline-block;
+    }
+
+    h4 {
+      margin-right: 40px;
+      display: inline-block;
+    }
+
+    .btn-lg {
+      font-size: 14px;
+      padding: 14px 30px;
+    }
+  }
+
+  .root-certificates {
+    padding-top: 25px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 20px 30px;
+
+    li {
+      margin: 5px 0px;
+    }
+
+    h4 {
+      font-weight: 600;
+    }
+  }
+
+  .btn-delete {
+    display: inline-block;
+  }
+
+  p.delete-text {
+    color: #777;
+    font-size: 13px;
+    display: inline-block;
+
+  }
+}
+
+.top-padder-md {
+  padding-top: 20px;
+}
+
+.margin-right-sm {
+  margin-right: 10px;
+}
+
+.bottom-padder-md {
+  padding-bottom: 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+/* CSS for the Email Us banner */
+
+.contact {
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+  margin-bottom: 80px;
+  padding: 20px 30px;
+  text-align: center;
+
+  h3 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+
+  .btn-md {
+    padding: 12px 20px;
+  }
+}

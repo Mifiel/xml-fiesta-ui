@@ -1,0 +1,36 @@
+<div class='config'>
+  <div class="row">
+    <div class="col-md-12">
+      <div ng-show="certs.length > 0" class="proceed-verify">
+        <h4>{{ 'CONFIG.CERTIFICATES_LOADED' | translate }}</h4>
+        <button class="btn-lg btn-success" ui-sref="verify">{{ 'CONFIG.VER_BUTTON' | translate }}</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group upload-certificates">
+        <h3 for="cert-uploader">{{ 'CONFIG.SELECT' | translate }}</h3>
+        <p class="help-block">{{ 'CONFIG.ALL' | translate }}</p>
+        <p class="help-block bottom-padder-md">{{ 'CONFIG.AFTER' | translate }}</p>
+        <input id="cert-uploader" type="file" accept=".crt" class="cert-uploader" custom-on-change="setRootCerts" multiple="true">
+      </div>
+    </div>
+    <div class="col-md-5 col-md-offset-1">
+      <div ng-show="certs.length > 0" class="root-certificates">
+        <h4>
+          {{ 'CONFIG.LOADED' | translate }}
+        </h4>
+        <ul class="bottom-padder-md">
+          <li ng-repeat="cert in certs | orderBy:'name'">
+            {{ cert.name }}
+          </li>
+        </ul>
+      </div>
+      <div ng-show="certs.length > 0">{{ 'CONFIG.DELETE' | translate }}<b>{{ 'CONFIG.UNDONE' | translate }}</b></p>
+        <button ng-click="clear()" class="btn btn-md btn-delete glyphicon glyphicon-trash"></button>
+      </div>
+    </div>
+  </div>
+</div>
