@@ -20,13 +20,15 @@ angular
     'LocalStorageModule'
     'pascalprecht.translate'
   ]
-  .config (localStorageServiceProvider, $translateProvider, TRANSLATIONS_EN, TRANSLATIONS_ES) ->
+  .config (localStorageServiceProvider, $translateProvider, $compileProvider, TRANSLATIONS_EN, TRANSLATIONS_ES) ->
     localStorageServiceProvider.setPrefix('XMLFiesta')
     $translateProvider
       .translations('en', TRANSLATIONS_EN)
       .translations('es', TRANSLATIONS_ES)
       .preferredLanguage('es')
       .fallbackLanguage('en')
+
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|blob):/);
 
   .config ($stateProvider, $urlRouterProvider) ->
     $stateProvider
@@ -42,11 +44,11 @@ angular
         controller: 'VerifyCtrl'
         controllerAs: 'verify'
 
-      .state 'contact',
-        url: '/contact'
-        templateUrl: 'views/contact.html'
-        controller: 'ContactCtrl'
-        controllerAs: 'contact'
+      .state 'how',
+        url: '/how'
+        templateUrl: 'views/how.html'
+        controller: 'HowCtrl'
+        controllerAs: 'how'
 
       .state 'config',
         url: '/config'

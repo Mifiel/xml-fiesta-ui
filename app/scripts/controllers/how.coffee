@@ -2,12 +2,12 @@
 
 ###*
  # @ngdoc function
- # @name xmlFiestaUiApp.controller:MainCtrl
+ # @name xmlFiestaUiApp.controller:HowCtrl
  # @description
- # # MainCtrl
+ # # HowCtrl
  # Controller of the xmlFiestaUiApp
 ###
 angular.module 'xmlFiestaUiApp'
-  .controller 'ContactCtrl', ->
+  .controller 'HowCtrl', ->
 
     return
