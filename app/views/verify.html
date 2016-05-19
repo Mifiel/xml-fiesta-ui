@@ -42,23 +42,23 @@
 
     <p class="help-block">{{ 'VERIFY.REMINDER' | translate }}</p>
     <div class="verify-info row top-padder-md">
-      
+
       <div class="col-md-3 col-sm-4">
         <strong>{{ 'VERIFY.DOCUMENT_NAME' | translate }}</strong>
       </div>
-      <div class="col-md-9 col-sm-8"> 
+      <div class="col-md-9 col-sm-8">
         {{ doc.name }}
       </div>
 
       <div class="col-md-3 col-sm-4" ng-class="{'text-success': oHashValid, 'text-danger': !oHashValid}">
         <strong>{{ 'VERIFY.ORIG_HASH' | translate }}<i class="glyphicon" ng-class="{'glyphicon-ok': oHashValid, 'glyphicon-remove': !oHashValid}"></i></strong>
       </div>
-      <div class="col-md-9 col-sm-8"> 
+      <div class="col-md-9 col-sm-8">
         {{ doc.originalHash }}
         <a href="" ng-show="!oHashValid" ng-click="showOHashError = !showOHashError">{{ 'VERIFY.WHY' | translate }}</a>
         <p class="alert alert-danger alert-incorrect" ng-show="showOHashError" role="alert">
           {{ 'VERIFY.WRONG_HASH' | translate }}
-        </p>      
+        </p>
       </div>
 
     </div>
@@ -67,51 +67,51 @@
       <div class="col-md-3 col-sm-4">
         <strong>{{ 'VERIFY.SIGNER' | translate }}</strong>
       </div>
-      <div class="col-md-9 col-sm-8"> 
-        {{ signature.signer.name }} &lt;{{ signature.signer.email }}&gt;    
+      <div class="col-md-9 col-sm-8">
+        {{ signature.signer.name }} &lt;{{ signature.signer.email }}&gt;
       </div>
 
       <div class="col-md-3 col-sm-4">
         <strong>{{ 'VERIFY.ID' | translate }}</strong>
       </div>
-      <div class="col-md-9 col-sm-8"> 
-        {{ signature.signer.id }}    
+      <div class="col-md-9 col-sm-8">
+        {{ signature.signer.id }}
       </div>
 
       <div class="col-md-3 col-sm-4">
         <strong>{{ 'VERIFY.SIG_DATE' | translate }}</strong>
       </div>
-      <div class="col-md-9 col-sm-8"> 
+      <div class="col-md-9 col-sm-8">
         {{ signature.signedAt }}
       </div>
 
       <div class="col-md-3 col-sm-4" ng-class="{'text-success': signature.certificate.valid, 'text-danger': !signature.certificate.valid}">
         <strong>{{ 'VERIFY.CERT_NUMBER' | translate }}<i class="glyphicon" ng-class="{'glyphicon-ok': signature.certificate.valid, 'glyphicon-remove': !signature.certificate.valid}"></i></strong>
       </div>
-      <div class="col-md-9 col-sm-8"> 
+      <div class="col-md-9 col-sm-8">
         {{ signature.certificate.getSerialNumber() }}
         <a href="" ng-show="!signature.certificate.valid" ng-click="signature.showCertError = !signature.showCertError">{{ 'VERIFY.WHY' | translate }}</a>
         <p class="alert alert-danger alert-incorrect" ng-show="signature.showCertError" role="alert">
           {{ 'VERIFY.WRONG_CERT' | translate }}
-        </p>      
+        </p>
       </div>
 
       <div class="col-md-3 col-sm-4" ng-class="{'text-success': signature.valid, 'text-danger': !signature.valid}">
         <strong>{{ 'VERIFY.SIGNATURE' | translate }}<i class="glyphicon" ng-class="{'glyphicon-ok': signature.valid, 'glyphicon-remove': !signature.valid}"></i></strong>
       </div>
-      <div class="col-md-9 col-sm-8 text-break"> 
+      <div class="col-md-9 col-sm-8 text-break">
         <p>{{ signature.sig('base64') }}</p>
         <a href="" ng-show="!signature.valid" ng-click="signature.showValidError = !signature.showValidError">Why?</a>
         <p class="alert alert-danger alert-incorrect" ng-show="signature.showValidError" role="alert">
           {{ 'VERIFY.WRONG_SIG' | translate }}
-        </p>    
+        </p>
       </div>
     </div>
 
     <div class="row top-padder-md bottom-padder-md center">
       <p><strong>{{ 'VERIFY.REVIEW' | translate }}</strong></p>
     </div>
-    
+
     <div class="row bottom-padder-lg center">
       <button class="btn-lg btn-success" ng-click="clear()">{{ 'VERIFY.NEW_DOC' | translate }}</button>
     </div>
