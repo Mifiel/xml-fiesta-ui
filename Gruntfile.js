@@ -19,6 +19,7 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('grunt-build-control');
+  grunt.loadNpmTasks('grunt-karma-coveralls');
 
   var app = require('./bower.json');
   // Configurable paths for the application
@@ -472,9 +473,18 @@ module.exports = function (grunt) {
           branch: 'gh-pages'
         }
       }
+    },
+
+    coveralls: {
+      options: {
+        debug: true,
+        coverageDir: 'coverage/',
+        dryRun: false,
+        force: false,
+        recursive: true
+      }
     }
   });
-
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {

@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "4.3"
+
+before_install:
+  - npm install -qg npm@2.14.12
+  - npm install -qg grunt-cli
+  - npm install -qg bower
+  - gem install compass
+  - bower install
+
+after_script:
+  - grunt coveralls

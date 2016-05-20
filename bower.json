@@ -1,6 +1,6 @@
 {
   "name": "xml-fiesta-ui",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "dependencies": {
     "angular": "^1.4.0",
     "bootstrap-sass-official": "^3.2.0",
@@ -30,7 +30,13 @@
       ]
     },
     "pdfjs-dist": {
-      "main": "build/pdf.js"
+      "main": [
+        "web/compatibility.js",
+        "build/pdf.js"
+      ]
     }
+  },
+  "resolutions": {
+    "angular": "1.5.5"
   }
 }
