@@ -30,7 +30,10 @@
       ]
     },
     "pdfjs-dist": {
-      "main": "build/pdf.js"
+      "main": [
+        "build/pdf.js",
+        "web/compatibility.js"
+      ]
     }
   }
 }
