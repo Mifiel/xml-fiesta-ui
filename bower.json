@@ -35,5 +35,8 @@
         "build/pdf.js"
       ]
     }
+  },
+  "resolutions": {
+    "angular": "1.5.5"
   }
 }
