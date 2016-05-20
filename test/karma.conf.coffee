@@ -18,6 +18,7 @@ module.exports = (config) ->
       'bower_components/angular-route/angular-route.js'
       'bower_components/angular-sanitize/angular-sanitize.js'
       'bower_components/angular-touch/angular-touch.js'
+      'bower_components/pdfjs-dist/web/compatibility.js'
       'bower_components/pdfjs-dist/build/pdf.js'
       'bower_components/angular-pdf/dist/angular-pdf.js'
       'bower_components/angular-ui-router/release/angular-ui-router.js'
