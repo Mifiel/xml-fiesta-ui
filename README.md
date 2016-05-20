@@ -1,5 +1,8 @@
 # XMLFiesta UI
 
+[![Build Status][travis-img]][travis-url]
+[![Coverage Status][coveralls-img]][coveralls-url]
+
 Offline verifyer for Mifiel generated XMLs. Visit http://mifiel.github.io/xml-fiesta-ui for the online version.
 
 ## Development
@@ -24,3 +27,8 @@ Run `grunt` for building and `grunt gh-pages` to publish it.
 ## Testing
 
 Running `grunt test` will run the unit tests with karma ones and `grunt test:ci` will run the tests every time you make changes in the code.
+
+[travis-img]: https://travis-ci.org/Mifiel/xml-fiesta-ui.svg?branch=master
+[travis-url]: https://travis-ci.org/Mifiel/xml-fiesta-ui
+[coveralls-img]: https://coveralls.io/repos/github/Mifiel/xml-fiesta-ui/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/Mifiel/xml-fiesta-ui?branch=master
