@@ -52,7 +52,7 @@ module.exports = (config) ->
       suppressSkipped: true
 
     coverageReporter:
-      type : 'html'
+      type : 'lcov'
       dir : 'coverage/'
       instrumenterOptions:
         istanbul:
