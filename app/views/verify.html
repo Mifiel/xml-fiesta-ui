@@ -108,6 +108,26 @@
       </div>
     </div>
 
+    <div class="verify-info row top-padder-md" id="conservancy-record">
+      <div class="col-md-12" ng-class="{'text-success': record.valid, 'text-danger': !record.valid}">
+        <strong>{{ 'VERIFY.CONSERVANCY_RECORD' | translate }} <i class="glyphicon" ng-class="{'glyphicon-ok': record.valid, 'glyphicon-remove': !record.valid}"></i></strong>
+      </div>
+
+      <div class="col-md-3 col-sm-4">
+        <strong>{{ 'VERIFY.RECORD.ISSUER' | translate }}</strong>
+      </div>
+      <div class="col-md-9 col-sm-8">
+        {{ record.caName() }}
+      </div>
+
+      <div class="col-md-3 col-sm-4">
+        <strong>{{ 'VERIFY.RECORD.TIMESTAMP' | translate }}</strong>
+      </div>
+      <div class="col-md-9 col-sm-8">
+        {{ record.recordTimestamp() | date:'medium':'UTC' }}
+      </div>
+    </div>
+
     <div class="row top-padder-md bottom-padder-md center">
       <p><strong>{{ 'VERIFY.REVIEW' | translate }}</strong></p>
     </div>

@@ -31,6 +31,10 @@ angular.module 'xmlFiestaUiApp'
       WRONG_CERT: 'El certificado no fue firmado con ninguno de los certificados raíz que cargaste en la página de configuración. Asegúrate de haber cargado todos los certificados raíz de la autoridad que emitió el certificado usado para firmar. Si este error persiste significa que el certificado no fue emitido por la autoridad certificadora dueña de los certificados raíz.'
       WRONG_SIG: 'La Firma no es válida, pudo haber sido modificada o no se usó la llave privada correspondiente al certificado mencionado anteriormente.'
       LOADING: 'Validando documento...'
+      CONSERVANCY_RECORD: 'Constancia de conservación'
+      RECORD:
+        ISSUER: 'Emisor'
+        TIMESTAMP: 'Fecha de constancia'
 
     FAQ:
       ABOUT: 'Acerca de'

@@ -41,6 +41,12 @@ angular.module 'xmlFiestaUiApp'
       $scope.doc = doc
       $scope.oHashValid = parsed.xmlOriginalHash == doc.originalHash
       $scope.signatures = doc.signatures()
+      $scope.record = doc.conservancyRecord || {}
+      if $scope.record && $scope.record instanceof XMLFiesta.ConservancyRecord
+        $scope.record.valid = $scope.record.valid() && $scope.record.equalTimestamps()
+      else
+        $scope.record.valid = false
+
       $scope.signatures.forEach (signature) ->
         signature.valid = signature.valid(doc.originalHash)
         signature.certificate.valid = false
