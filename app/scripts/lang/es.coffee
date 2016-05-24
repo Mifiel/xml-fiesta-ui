@@ -31,10 +31,12 @@ angular.module 'xmlFiestaUiApp'
       WRONG_CERT: 'El certificado no fue firmado con ninguno de los certificados raíz que cargaste en la página de configuración. Asegúrate de haber cargado todos los certificados raíz de la autoridad que emitió el certificado usado para firmar. Si este error persiste significa que el certificado no fue emitido por la autoridad certificadora dueña de los certificados raíz.'
       WRONG_SIG: 'La Firma no es válida, pudo haber sido modificada o no se usó la llave privada correspondiente al certificado mencionado anteriormente.'
       LOADING: 'Validando documento...'
-      CONSERVANCY_RECORD: 'Constancia de conservación'
+      CONSERVANCY_RECORD: 'Constáncia de conservación'
       RECORD:
         ISSUER: 'Emisor'
-        TIMESTAMP: 'Fecha de constancia'
+        TIMESTAMP: 'Fecha de constáncia'
+        WRONG_TS: 'La fecha del XML ({{xmlTS}}) no coincide con la fecha de la constáncia de conservación ({{recordTS}}).'
+        WRONG_CR: 'La constáncia de conservación en el XML no está presente o no tiene una esctructura válida.'
 
     FAQ:
       ABOUT: 'Acerca de'
