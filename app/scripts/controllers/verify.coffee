@@ -8,7 +8,7 @@
  # Controller of the xmlFiestaUiApp
 ###
 angular.module 'xmlFiestaUiApp'
-  .controller 'VerifyCtrl', ($scope, $timeout, localStorageService) ->
+  .controller 'VerifyCtrl', ($scope, $timeout, $filter, localStorageService) ->
     PDFJS.workerSrc = 'scripts/pdf.worker.js'
 
     fetchRootCerts = ->
@@ -36,16 +36,32 @@ angular.module 'xmlFiestaUiApp'
       return
 
     $scope.parseXML = (xml) ->
-      parsed = XMLFiesta.Document.fromXml(xml)
+      try
+        parsed = XMLFiesta.Document.fromXml(xml)
+      catch e
+        # addError("XML Format is invalid: #{e}")
+        return false
+
       doc = parsed.document
       $scope.doc = doc
       $scope.oHashValid = parsed.xmlOriginalHash == doc.originalHash
       $scope.signatures = doc.signatures()
+      $scope.record = doc.conservancyRecord || {}
+      if $scope.record && $scope.record instanceof XMLFiesta.ConservancyRecord
+        $scope.record.valid = $scope.record.valid()
+        $scope.record.validTS = $scope.record.equalTimestamps()
+        $scope.record.tsTranslation = {
+          recordTS: $filter('date')($scope.record.recordTimestamp(), 'medium', 'UTC'),
+          xmlTS: $filter('date')(Date.parse($scope.record.timestamp), 'medium', 'UTC')
+        }
+      else
+        $scope.record.valid = false
+
       $scope.signatures.forEach (signature) ->
         signature.valid = signature.valid(doc.originalHash)
         signature.certificate.valid = false
         angular.forEach $scope.certs, (el) ->
-          # dont keep verifying if its already verifi
+          # dont keep verifying if its already verified
           if !signature.certificate.valid
             signature.certificate.valid = signature.certificate.isCa(el.content)
             return

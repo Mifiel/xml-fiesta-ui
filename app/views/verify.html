@@ -82,7 +82,7 @@
         <strong>{{ 'VERIFY.SIG_DATE' | translate }}</strong>
       </div>
       <div class="col-md-9 col-sm-8">
-        {{ signature.signedAt }}
+        {{ signature.signedAt | date:'medium':'UTC' }}
       </div>
 
       <div class="col-md-3 col-sm-4" ng-class="{'text-success': signature.certificate.valid, 'text-danger': !signature.certificate.valid}">
@@ -101,10 +101,47 @@
       </div>
       <div class="col-md-9 col-sm-8 text-break">
         <p>{{ signature.sig('base64') }}</p>
-        <a href="" ng-show="!signature.valid" ng-click="signature.showValidError = !signature.showValidError">Why?</a>
+        <a href="" ng-show="!signature.valid" ng-click="signature.showValidError = !signature.showValidError">{{ 'VERIFY.WHY' | translate }}</a>
         <p class="alert alert-danger alert-incorrect" ng-show="signature.showValidError" role="alert">
           {{ 'VERIFY.WRONG_SIG' | translate }}
         </p>
+      </div>
+    </div>
+
+    <div class="verify-info row top-padder-md" id="conservancy-record">
+      <div class="col-md-12" ng-class="{'text-danger': !record.valid}">
+        <strong>
+          {{ 'VERIFY.CONSERVANCY_RECORD' | translate }}
+          <i class="glyphicon" ng-class="{'glyphicon-remove': !record.valid}"></i>
+        </strong>
+        <a ng-show="!record.valid" href="" ng-click="record.showValidCR = !record.showValidCR">{{ 'VERIFY.WHY' | translate }}</a>
+        <p class="alert alert-danger alert-incorrect" ng-show="record.showValidCR" role="alert">
+          {{ 'VERIFY.RECORD.WRONG_CR' | translate }}
+        </p>
+      </div>
+
+      <div ng-show="record.valid">
+        <div class="col-md-3 col-sm-4" ng-class="{'text-success': record.valid, 'text-danger': !record.valid}">
+          <strong>{{ 'VERIFY.RECORD.ISSUER' | translate }}</strong>
+          <i class="glyphicon" ng-class="{'glyphicon-ok': record.valid, 'glyphicon-remove': !record.valid}"></i>
+        </div>
+        <div class="col-md-9 col-sm-8">
+          {{ record.caName() }}
+        </div>
+
+        <div class="col-md-3 col-sm-4" ng-class="{'text-success': record.validTS, 'text-danger': !record.validTS}">
+          <strong>
+            {{ 'VERIFY.RECORD.TIMESTAMP' | translate }}
+            <i class="glyphicon" ng-class="{'glyphicon-ok': record.validTS, 'glyphicon-remove': !record.validTS}"></i>
+          </strong>
+        </div>
+        <div class="col-md-9 col-sm-8">
+          {{ record.recordTimestamp() | date:'medium':'UTC' }}
+          <a href="" ng-show="!record.validTS" ng-click="record.showValidTS = !record.showValidTS">{{ 'VERIFY.WHY' | translate }}</a>
+          <p class="alert alert-danger alert-incorrect" ng-show="record.showValidTS" role="alert">
+            {{ 'VERIFY.RECORD.WRONG_TS' | translate:record.tsTranslation }}
+          </p>
+        </div>
       </div>
     </div>
 
