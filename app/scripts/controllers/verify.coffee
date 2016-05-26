@@ -9,7 +9,7 @@
 ###
 angular.module 'xmlFiestaUiApp'
   .controller 'VerifyCtrl', ($scope, $timeout, $filter, localStorageService) ->
-    # PDFJS.workerSrc = 'scripts/pdf.worker.js'
+    PDFJS.workerSrc = 'scripts/pdf.worker.js'
 
     fetchRootCerts = ->
       $scope.certs = []
