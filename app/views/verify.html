@@ -121,9 +121,9 @@
       </div>
 
       <div ng-show="record.valid">
-        <div class="col-md-3 col-sm-4" ng-class="{'text-success': record.valid, 'text-danger': !record.valid}">
+        <div class="col-md-3 col-sm-4" ng-class="{'text-success': record.validCA, 'text-danger': !record.validCA}">
           <strong>{{ 'VERIFY.RECORD.ISSUER' | translate }}</strong>
-          <i class="glyphicon" ng-class="{'glyphicon-ok': record.valid, 'glyphicon-remove': !record.valid}"></i>
+          <i class="glyphicon" ng-class="{'glyphicon-ok': record.validCA, 'glyphicon-remove': !record.validCA}"></i>
         </div>
         <div class="col-md-9 col-sm-8">
           {{ record.caName() }}
