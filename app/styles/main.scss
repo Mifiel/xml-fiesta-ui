@@ -42,6 +42,14 @@ a:hover {
   color: #333;
 }
 
+.text-small {
+  font-size: 12px !important;
+}
+
+a.unstyled{
+  text-decoration: none;
+}
+
 .navbar-nav a:hover, .navbar-nav a.active {
   color: #2bb673 !important;
   font-weight: 600;
@@ -238,7 +246,7 @@ button {
 }
 
 .verify {
-  
+
   padding-top: 30px;
   padding-bottom: 120px;
 
