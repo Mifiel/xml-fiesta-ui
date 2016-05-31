@@ -33,6 +33,9 @@
         <div ng-show="loading">
           <h4>{{ 'VERIFY.LOADING' | translate }}</h4>
         </div>
+        <div class="text-danger" ng-show="error">
+          <h4>{{ error }}</h4>
+        </div>
       </div>
     </div>
   </div>
