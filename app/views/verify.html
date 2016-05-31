@@ -111,7 +111,7 @@
       </div>
     </div>
 
-    <div class="verify-info row top-padder-md" id="conservancy-record">
+    <div ng-show="record" class="verify-info row top-padder-md" id="conservancy-record">
       <div class="col-md-12" ng-class="{'text-danger': !record.valid}">
         <strong>
           {{ 'VERIFY.CONSERVANCY_RECORD' | translate }}

@@ -46,15 +46,18 @@ angular.module 'xmlFiestaUiApp'
       try
         parsed = XMLFiesta.Document.fromXml(xml)
       catch e
-        # addError("XML Format is invalid: #{e}")
+        msg = "XML Format is invalid: #{e.message}"
+        $scope.error = msg
+        console.error($scope.error)
+        $scope.loading = false
         return false
 
       doc = parsed.document
       $scope.doc = doc
       $scope.oHashValid = parsed.xmlOriginalHash == doc.originalHash
       $scope.signatures = doc.signatures()
-      $scope.record = doc.conservancyRecord || {}
-      if $scope.record instanceof XMLFiesta.ConservancyRecord
+      $scope.record = doc.conservancyRecord
+      if doc.recordPresent && $scope.record instanceof XMLFiesta.ConservancyRecord
         $scope.record.valid = $scope.record.valid()
         $scope.record.validTS = $scope.record.equalTimestamps()
         $scope.record.validCA = false
@@ -67,9 +70,9 @@ angular.module 'xmlFiestaUiApp'
         $scope.record.tsTranslation =
           recordTS: $filter('date')($scope.record.recordTimestamp(), 'medium', 'UTC')
           xmlTS: $filter('date')(Date.parse($scope.record.timestamp), 'medium', 'UTC')
-
-      else
-        $scope.record.valid = false
+      else if doc.recordPresent && doc.errors.recordInvalid
+        $scope.record =
+          valid: false
 
       $scope.signatures.forEach (signature) ->
         signature.valid = signature.valid(doc.originalHash)
