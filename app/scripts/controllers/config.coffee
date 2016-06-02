@@ -12,19 +12,34 @@ angular.module 'xmlFiestaUiApp'
 
     fetchRootCerts = ->
       $scope.certs = []
+      $scope.nom151Ca = []
       certs = localStorageService.get('rootCerts')
-      return unless certs
-      angular.forEach certs, (el) ->
-        $scope.certs.push el
+      nom151Ca = localStorageService.get('nom151Ca')
+      if nom151Ca
+        angular.forEach nom151Ca, (el) ->
+          $scope.nom151Ca.push el
+
+      if certs
+        angular.forEach certs, (el) ->
+          $scope.certs.push el
+      return
 
     fetchRootCerts()
+
+    $scope.removeNom151Ca = ->
+      localStorageService.remove('nom151Ca')
+      fetchRootCerts()
+
+    $scope.removeCerts = ->
+      localStorageService.remove('rootCerts')
+      fetchRootCerts()
 
     $scope.clear = ->
       localStorageService.clearAll()
       fetchRootCerts()
 
-    $scope.setRootCerts = (event) ->
-      certs = localStorageService.get('rootCerts') || {}
+    setCerts = (event, storageName) ->
+      certs = localStorageService.get(storageName) || {}
       angular.forEach event.target.files, (file) ->
         reader = new FileReader
         reader.addEventListener 'load', (loadEvent) ->
@@ -32,13 +47,19 @@ angular.module 'xmlFiestaUiApp'
             name: file.name
             content: loadEvent.target.result
 
-          localStorageService.set('rootCerts', certs)
+          localStorageService.set(storageName, certs)
           angular.element('.cert-uploader').val('')
 
         reader.addEventListener 'loadend', ->
           fetchRootCerts()
           $scope.$apply()
         reader.readAsText(file)
+
+    $scope.setRootCerts = (event) ->
+      setCerts(event, 'rootCerts')
+
+    $scope.setNom151Ca = (event) ->
+      setCerts(event, 'nom151Ca')
 
     return
 

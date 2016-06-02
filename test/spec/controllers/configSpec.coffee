@@ -96,3 +96,56 @@ describe 'ConfigCtrl', ->
       onloadendHandler()
       expect(localStorageService.get).toHaveBeenCalledWith('rootCerts')
 
+  describe '.setNom151Ca', ->
+    eventListener = jasmine.createSpy()
+    beforeEach ->
+      initController()
+      spyOn(mockWindow, 'FileReader').and.returnValue {
+        addEventListener: eventListener
+        readAsText: (file) ->
+      }
+      spyOn(localStorageService, 'set').and.returnValue null
+      spyOn(localStorageService, 'get').and.returnValue null
+      elm = $compile('<div custom-on-change="setNom151Ca"></div>')($scope)
+      div = elm[0]
+      div.files = [{name: 'file.crt', size: 123}]
+      div.dispatchEvent(new CustomEvent('change'))
+
+    it 'should load the certificates onload', ->
+      call = eventListener.calls.first()
+      expect(call.args[0]).toBe 'load'
+      onloadHandler = call.args[1]
+      onloadHandler({
+        target:
+          result: 'content of file.crt'
+      })
+      resultCerts =
+        'file.crt':
+          name: 'file.crt'
+          content: 'content of file.crt'
+      expect(localStorageService.get).toHaveBeenCalledWith('nom151Ca')
+      expect(localStorageService.set)
+        .toHaveBeenCalledWith 'nom151Ca', resultCerts
+
+    it 'should render again onloadend', ->
+      call = eventListener.calls.mostRecent()
+      expect(call.args[0]).toBe 'loadend'
+      onloadendHandler = call.args[1]
+      onloadendHandler()
+      expect(localStorageService.get).toHaveBeenCalledWith('nom151Ca')
+
+  describe '.removeNom151Ca', ->
+    it 'should remove Nom151Ca', ->
+      initController()
+      spyOn(localStorageService, 'remove').and.returnValue null
+
+      $scope.removeNom151Ca()
+      expect(localStorageService.remove).toHaveBeenCalledWith('nom151Ca')
+
+  describe '.removeCerts', ->
+    it 'should remove Certs', ->
+      initController()
+      spyOn(localStorageService, 'remove').and.returnValue null
+      $scope.removeCerts()
+      expect(localStorageService.remove).toHaveBeenCalledWith('rootCerts')
+

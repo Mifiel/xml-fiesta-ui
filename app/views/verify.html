@@ -33,6 +33,9 @@
         <div ng-show="loading">
           <h4>{{ 'VERIFY.LOADING' | translate }}</h4>
         </div>
+        <div class="text-danger" ng-show="error">
+          <h4>{{ error }}</h4>
+        </div>
       </div>
     </div>
   </div>
@@ -108,7 +111,7 @@
       </div>
     </div>
 
-    <div class="verify-info row top-padder-md" id="conservancy-record">
+    <div ng-show="record" class="verify-info row top-padder-md" id="conservancy-record">
       <div class="col-md-12" ng-class="{'text-danger': !record.valid}">
         <strong>
           {{ 'VERIFY.CONSERVANCY_RECORD' | translate }}
@@ -121,9 +124,9 @@
       </div>
 
       <div ng-show="record.valid">
-        <div class="col-md-3 col-sm-4" ng-class="{'text-success': record.valid, 'text-danger': !record.valid}">
+        <div class="col-md-3 col-sm-4" ng-class="{'text-success': record.validCA, 'text-danger': !record.validCA}">
           <strong>{{ 'VERIFY.RECORD.ISSUER' | translate }}</strong>
-          <i class="glyphicon" ng-class="{'glyphicon-ok': record.valid, 'glyphicon-remove': !record.valid}"></i>
+          <i class="glyphicon" ng-class="{'glyphicon-ok': record.validCA, 'glyphicon-remove': !record.validCA}"></i>
         </div>
         <div class="col-md-9 col-sm-8">
           {{ record.caName() }}
@@ -140,6 +143,21 @@
           <a href="" ng-show="!record.validTS" ng-click="record.showValidTS = !record.showValidTS">{{ 'VERIFY.WHY' | translate }}</a>
           <p class="alert alert-danger alert-incorrect" ng-show="record.showValidTS" role="alert">
             {{ 'VERIFY.RECORD.WRONG_TS' | translate:record.tsTranslation }}
+          </p>
+        </div>
+
+        <div class="col-md-3 col-sm-4" ng-class="{'text-success': record.validArchive, 'text-danger': !record.validArchive}">
+          <strong>
+            {{ 'VERIFY.RECORD.VALIDITY' | translate }}
+            <i class="glyphicon" ng-class="{'glyphicon-ok': record.validArchive, 'glyphicon-remove': !record.validArchive}"></i>
+          </strong>
+        </div>
+        <div class="col-md-9 col-sm-8">
+          <p ng-show="!record.validArchive">
+            {{ 'VERIFY.RECORD.WRONG_ARCHIVE' | translate }}
+          </p>
+          <p ng-show="record.validArchive">
+            {{ 'VERIFY.RECORD.VALID_ARCHIVE' | translate }}
           </p>
         </div>
       </div>
