@@ -145,6 +145,21 @@
             {{ 'VERIFY.RECORD.WRONG_TS' | translate:record.tsTranslation }}
           </p>
         </div>
+
+        <div class="col-md-3 col-sm-4" ng-class="{'text-success': record.validArchive, 'text-danger': !record.validArchive}">
+          <strong>
+            {{ 'VERIFY.RECORD.VALIDITY' | translate }}
+            <i class="glyphicon" ng-class="{'glyphicon-ok': record.validArchive, 'glyphicon-remove': !record.validArchive}"></i>
+          </strong>
+        </div>
+        <div class="col-md-9 col-sm-8">
+          <p ng-show="!record.validArchive">
+            {{ 'VERIFY.RECORD.WRONG_ARCHIVE' | translate }}
+          </p>
+          <p ng-show="record.validArchive">
+            {{ 'VERIFY.RECORD.VALID_ARCHIVE' | translate }}
+          </p>
+        </div>
       </div>
     </div>
 

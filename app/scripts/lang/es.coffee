@@ -35,8 +35,11 @@ angular.module 'xmlFiestaUiApp'
       RECORD:
         ISSUER: 'Emisor'
         TIMESTAMP: 'Fecha'
+        VALIDITY: 'Validez'
         WRONG_TS: 'La fecha del XML ({{xmlTS}}) no coincide con la fecha de la constancia de conservación ({{recordTS}}).'
         WRONG_CR: 'La constancia de conservación en el XML no está presente o no tiene una esctructura válida.'
+        WRONG_ARCHIVE: 'El documento o las firmas han sido modificados desde la emisión de la constancia.'
+        VALID_ARCHIVE: 'La constancia de conservación coincide con documento y firmas.'
 
     FAQ:
       ABOUT: 'Acerca de'

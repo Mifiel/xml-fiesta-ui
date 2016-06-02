@@ -43,6 +43,7 @@ angular.module 'xmlFiestaUiApp'
         $scope.record.valid = $scope.record.valid()
         $scope.record.validTS = $scope.record.equalTimestamps()
         $scope.record.validCA = false
+        $scope.record.validArchive = $scope.record.validArchiveHash()
         angular.forEach $scope.nom151Ca, (el) ->
           # dont keep verifying if its already verified
           if !$scope.record.validCA
