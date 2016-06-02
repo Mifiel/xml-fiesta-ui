@@ -1,6 +1,9 @@
 # CHANGELOG
 
-# V1.1.0 - Conservation archive validation - 2.Jun.2016
+# V1.1.0 - NOM151 validation - 2.Jun.2016
+- Uploader of NOM151 CA
+- Verifier of NOM151 cert against CA
+- Show errors if any
 - Validates that a conservation record correspond with the xml
 
 # V1.0.0 - Production ready version - 26.May.2016
