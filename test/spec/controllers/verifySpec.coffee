@@ -1,11 +1,30 @@
 'use strict'
 
+class FakeResolvedPromise
+  constructor: (@resolvedObject) ->
+  then: (callback)->
+    callback(@resolvedObject)
+    this
+  catch: ->
+    this
+
+class FakeRejectPromise
+  constructor: (errorMsg) ->
+    @error =
+      message: errorMsg
+  then: ->
+    this
+  catch: (callback) ->
+    callback(@error)
+    this
+
 describe 'VerifyCtrl', ->
 
   beforeEach module 'xmlFiestaUiApp'
 
   controller = null
   $scope = null
+  $q = null
   localStorageService = null
   initController = null
 
@@ -13,8 +32,9 @@ describe 'VerifyCtrl', ->
     name: 'blah'
     content: 'blah'
 
-  beforeEach inject ($controller, $rootScope, _localStorageService_) ->
+  beforeEach inject ($controller, _$q_, $rootScope, _localStorageService_) ->
     $scope = $rootScope.$new()
+    $q = _$q_
     localStorageService = _localStorageService_
     initController = ->
       controller = $controller 'VerifyCtrl', {
@@ -79,20 +99,58 @@ describe 'VerifyCtrl', ->
                 certificate: isCa: -> false
               }
             ]
+          recordPresent: true
+          errors: {}
           pdfBuffer: -> 'as'
 
-      beforeEach ->
-        spyOn(XMLFiesta.Document, 'fromXml').and.returnValue mockXMLDocument
-        $scope.parseXML('blah')
+      describe 'when resolved', ->
+        beforeEach ->
+          spyOn(XMLFiesta.Document, 'fromXml').and.returnValue(
+            new FakeResolvedPromise(mockXMLDocument)
+          )
+          $scope.parseXML('blah')
 
-      it 'should assign signatures', ->
-        expect($scope.signatures.length).toBe 2
+        it 'should assign signatures', ->
+          expect(typeof $scope.signatures).toBe('object')
+          expect($scope.signatures.length).toBe 2
 
-      it 'should assign a pdfUrl', ->
-        expect($scope.pdfUrl).not.toBe null
+        it 'should assign a pdfUrl', ->
+          expect($scope.pdfUrl).not.toBe null
+
+        it 'should not be loading', ->
+          expect($scope.loading).toBe false
+
+        it 'should not set the record', ->
+          expect($scope.record).toBe null
+
+      xdescribe 'when resolve with recordPresent', ->
+        beforeEach ->
+          spyOn(XMLFiesta.Document, 'fromXml').and.returnValue(
+            mockXMLDocument.record = new XMLFiesta.ConservancyRecord('')
+            new FakeResolvedPromise(mockXMLDocument)
+          )
+          $scope.parseXML('blah')
+
+        it 'should set the record', ->
+          expect($scope.record).not.toBe null
+
+      describe 'when rejected', ->
+        beforeEach ->
+          spyOn(XMLFiesta.Document, 'fromXml').and.returnValue(
+            new FakeRejectPromise('Error message')
+          )
+
+          $scope.parseXML('blah')
+
+        it 'should set an error', ->
+          expect($scope.error.indexOf('Error message') > 0).toBe true
+
+        it 'should not be loading', ->
+          expect($scope.loading).toBe false
+
 
     describe '$watch upload', ->
-      it 'asd', ->
+      it 'smoke test', ->
         $scope.upload =
           result: raw: 'blah'
         $scope.$apply()
