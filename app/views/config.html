@@ -13,7 +13,10 @@
       <div class="form-group upload-certificates">
         <h3>{{ 'CONFIG.SELECT' | translate }}</h3>
         <p class="help-block top-padder-md">{{ 'CONFIG.ALL' | translate }}</p>
-        <p class="help-block top-padder-md bottom-padder-md">{{ 'CONFIG.AFTER' | translate }}</p>
+        <p class="help-block top-padder-md">{{ 'CONFIG.AFTER' | translate }}</p>
+        <p class="help-block top-padder-md bottom-padder-md">
+          Puedes bajar los certificados <a href="https://github.com/Mifiel/xml-fiesta-ui/raw/master/doc/root-certificates/MX/root-certificates.zip" target="_blank">aquí</a>.
+        </p>
         <h4><strong>Carga de Certificados de firma</strong></h4>
         <input type="file" accept=".crt" class="cert-uploader" custom-on-change="setRootCerts" multiple="true">
         <h4><strong>Carga de Certificados de constancia</strong></h4>
