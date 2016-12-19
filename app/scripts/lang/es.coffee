@@ -34,7 +34,7 @@ angular.module 'xmlFiestaUiApp'
       WRONG_SIG: 'La Firma no es válida, pudo haber sido modificada o no se usó la llave privada correspondiente al certificado mencionado anteriormente.'
       LOADING: 'Validando documento...'
       CONSERVANCY_RECORD: 'Constancia de conservación'
-      EMAIL: 'Correo eletrónico'
+      EMAIL: 'Correo electrónico'
       RECORD:
         ISSUER: 'Emisor'
         TIMESTAMP: 'Fecha'
