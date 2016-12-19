@@ -1,7 +1,7 @@
 .verify {
 
 	.verify-info {
-		line-height: 2;
+		line-height: 1.44em;
 
 		.alert-danger {
 		  color: #E9573F;
@@ -36,4 +36,17 @@
 
 	}
 
+	.verify-in-short {
+		font-size: 0.8em;
+
+		h2 {
+			line-height: 1.44em;
+			margin: 20px 0;
+		}
+	}
+
+	.help-block {
+		color: #333;
+		font-weight: 600;
+	}
 }

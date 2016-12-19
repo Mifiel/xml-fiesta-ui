@@ -26,7 +26,7 @@ h3 {
 
 h2,
 h4 {
-  font-weight: 200;
+  font-weight: 400;
 }
 
 h5,
@@ -129,6 +129,13 @@ button {
   padding: 15px 20px;
 }
 
+.btn-sm {
+  font-size: 0.7em;
+  font-weight: 600;
+  line-height: 26px;
+  padding: 0 15px;
+}
+
 .btn-delete {
   color: #fff;
   text-shadow: none;
@@ -170,6 +177,10 @@ button {
     margin-bottom: 0;
     line-height: 40px;
     padding-bottom: 19px;
+  }
+
+  .validate-another {
+    margin-top: 22px;
   }
 }
 
@@ -263,11 +274,13 @@ button {
 
   }
 
-  .text-success {
+  .text-success,
+  .glyphicon-ok {
     color: #2bb673;
   }
 
-  .text-danger {
+  .text-danger,
+  .glyphicon-remove {
     color: #ED5565;
   }
 
@@ -360,6 +373,10 @@ button {
   padding-top: 20px;
 }
 
+.top-padder-lg {
+  padding-top: 40px;
+}
+
 .margin-right-sm {
   margin-right: 10px;
 }
@@ -388,5 +405,78 @@ button {
 
   .btn-md {
     padding: 12px 20px;
+  }
+}
+
+/* CSS for Modals */
+
+.fiesta-modal {
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  position: fixed;
+  right: 0;
+  top: 0;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 100;
+
+  h4 {
+    font-size: 1.2em;
+    font-weight: 800;
+    line-height: 1.44em;
+    margin: 32px 0;
+  }
+
+  .modal-back-screen {
+    background: rgba(0,0,0,0.3);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .modal-content {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    left: 0;
+    margin: 0 auto;
+    padding: 0 40px 40px 40px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 42px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    width: 680px;
+  }
+
+  .see-signature {
+    text-decoration: underline;
+  }
+
+  .see-signature.active {
+    color: #333;
+  }
+
+  .long-signature {
+    font-size: 0.7em;
+    word-wrap: break-word;
+  }
+}
+
+.fiesta-modal.ng-hide {
+  opacity: 0;
+
+  .modal-content {
+    top: 0;
   }
 }

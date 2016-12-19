@@ -8,8 +8,10 @@
  # Controller of the xmlFiestaUiApp
 ###
 angular.module 'xmlFiestaUiApp'
-  .controller 'VerifyCtrl', ($scope, $q, $timeout, $filter, localStorageService) ->
+  .controller 'VerifyCtrl', ($scope, $q, $timeout, $filter, HeaderContext, localStorageService) ->
     PDFJS.workerSrc = 'scripts/pdf.worker.js'
+
+    $scope.headContext = HeaderContext.context
 
     fetchRootCerts = ->
       $scope.certs = []
@@ -33,6 +35,8 @@ angular.module 'xmlFiestaUiApp'
       $scope.doc = null
       $scope.pdfUrl = null
       $scope.loading = false
+      $scope.details = false
+      $scope.headContext.validatedDocReady = false
       angular.element('.file-upload-input').val('')
       return
 
@@ -79,6 +83,9 @@ angular.module 'xmlFiestaUiApp'
         setRecordValues()
         setSigners()
 
+        $scope.headContext.validatedDocReady = true
+        $scope.headContext.clear = $scope.clear
+
         currentBlob = new Blob([doc.pdfBuffer()], {type: 'application/pdf'})
         $scope.pdfUrl = URL.createObjectURL(currentBlob)
         $scope.loading = false
@@ -94,6 +101,7 @@ angular.module 'xmlFiestaUiApp'
       return
 
     $scope.$watch 'upload', (value) ->
+      console.log(value)
       return unless value
       $scope.loading = true
       $timeout ->

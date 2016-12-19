@@ -13,7 +13,7 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,200,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,200,600,800' rel='stylesheet' type='text/css'>
   </head>
   <body ng-app="xmlFiestaUiApp">
     <!--[if lte IE 8]>
@@ -21,7 +21,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
+    <div class="header" ng-controller="HeaderCtrl">
       <div class="navbar navbar-default" role="navigation">
         <div class="container">
           <div class="navbar-header">
@@ -47,6 +47,10 @@
             <ul class="nav navbar-nav navbar-right">
               <li><a ui-sref="config" ui-sref-active="active">{{ 'HEADER.CONFIG' | translate }}</a>
             </ul>
+            
+            <button ng-show="headContext.validatedDocReady" class="validate-another btn-sm btn-success" ng-click="headContext.clear()">
+              {{ 'VERIFY.NEW_DOC' | translate }} {{testing}}
+            </button>
           </div>
         </div>
       </div>
@@ -108,9 +112,11 @@
     <script src="scripts/lang/es.js"></script>
     <script src="scripts/lang/en.js"></script>
     <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/header.js"></script>
     <script src="scripts/controllers/verify.js"></script>
     <script src="scripts/controllers/how.js"></script>
     <script src="scripts/controllers/config.js"></script>
+    <script src="scripts/services/headerContext.js"></script>
     <script src="scripts/services/dropzone.js"></script>
     <script src="scripts/services/fileread.js"></script>
     <!-- endbuild -->
