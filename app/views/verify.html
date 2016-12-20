@@ -40,7 +40,7 @@
     </div>
   </div>
 
-  <div class="verify-in-short col-md-offset-2 col-md-8 col-sm-12" ng-show="pdfUrl && !loading">
+  <div class="verify-in-short col-md-offset-1 col-md-10 col-sm-12" ng-show="pdfUrl && !loading">
     <h2 class="center">{{ 'VERIFY.VALIDATIONS' | translate }}</h2>
 
     <p class="help-block">{{ 'VERIFY.REMINDER' | translate }}</p>
@@ -79,7 +79,7 @@
         {{ signature.signer.name }} &lt;{{ signature.signer.email }}&gt; <br>
         <span>{{ 'VERIFY.ID' | translate }}: {{ signature.signer.id }}</span>
       </div>
-      <!-- 
+      <!--
       <div class="col-md-3 col-sm-4">
         <strong>{{ 'VERIFY.ID' | translate }}</strong>
       </div>
@@ -187,8 +187,8 @@
 
         <div class="bottom-padder-md" ng-repeat="signature in signatures">
           <strong>
-            {{ 'VERIFY.SIGNER' | translate }} 
-            <span ng-show="signatures.length > 1">{{$index + 1}}</span>: 
+            {{ 'VERIFY.SIGNER' | translate }}
+            <span ng-show="signatures.length > 1">{{$index + 1}}</span>:
             {{ signature.signer.name }}
             <i class="glyphicon" ng-class="{'glyphicon-ok': signature.valid, 'glyphicon-remove': !signature.valid}"></i>
           </strong>
@@ -196,8 +196,8 @@
             {{ 'VERIFY.EMAIL' | translate }}: {{ signature.signer.email }} <br>
             {{ 'VERIFY.ID' | translate }}: {{ signature.signer.id }} <br>
             {{ 'VERIFY.SIG_DATE' | translate }}: {{ signature.signedAt | date:'medium':'UTC' }} <br>
-            <a href="" class="see-signature" 
-              ng-class="{'active': signature.seeSignature}" 
+            <a href="" class="see-signature"
+              ng-class="{'active': signature.seeSignature}"
               ng-click="signature.seeSignature = !signature.seeSignature">
               {{ 'VERIFY.SEE_SIG' | translate }}
             </a>
@@ -205,7 +205,7 @@
               {{ signature.sig('base64') }}
             </div>
           </div>
-          <!-- 
+          <!--
           <div class="col-md-3 col-sm-4">
             <strong>{{ 'VERIFY.ID' | translate }}</strong>
           </div>
@@ -247,7 +247,7 @@
           <strong>
             {{ 'VERIFY.CONSERVANCY_RECORD' | translate }} <i class="glyphicon" ng-class="{'glyphicon-ok': record.validArchive, 'glyphicon-remove': !record.validArchive || !record.valid}"></i>
           </strong> <br>
-  
+
           <span>{{ 'VERIFY.RECORD.ISSUER' | translate }}: {{ record.caName() }}</span> <br>
 
           <span>{{ 'VERIFY.RECORD.TIMESTAMP' | translate }}: {{ record.recordTimestamp() | date:'medium':'UTC' }}</span>
@@ -270,11 +270,11 @@
     </div>
 
     <div class="row top-padder-md bottom-padder-md center">
-      <button class="btn-lg btn-success" ng-click="details = true">{{ 'VERIFY.SEE_DETAILS' | translate }}</button>
+      <button class="btn-md btn-darkgrey" ng-click="details = true">{{ 'VERIFY.SEE_DETAILS' | translate }}</button>
     </div>
 
     <div class="row top-padder-lg bottom-padder-md center">
-      <p><strong>{{ 'VERIFY.REVIEW' | translate }}</strong></p>
+      <p>{{ 'VERIFY.REVIEW' | translate }}</p>
     </div>
 
     <hr>

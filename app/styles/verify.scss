@@ -9,7 +9,7 @@
 		  padding: 20px 20px;
 		  border-radius: 2px;
 		  margin: 15px 0px;
-		  font-size: 13px;		
+		  font-size: 13px;
 		  border: 0px;
 		}
 
@@ -37,11 +37,14 @@
 	}
 
 	.verify-in-short {
-		font-size: 0.8em;
+		font-size: 0.9em;
+    line-height: 1.5;
 
 		h2 {
 			line-height: 1.44em;
 			margin: 20px 0;
+      font-size: 26px;
+      font-weight: 600;
 		}
 	}
 
