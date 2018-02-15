@@ -42,13 +42,13 @@ angular.module 'xmlFiestaUiApp'
       if $scope.doc.recordPresent && $scope.record instanceof XMLFiesta.ConservancyRecord
         $scope.record.valid = $scope.record.valid()
         $scope.record.validTS = $scope.record.equalTimestamps()
-        $scope.record.validCA = false
+        $scope.record.validCA = true
         $scope.record.validArchive = $scope.record.validArchiveHash()
-        angular.forEach $scope.nom151Ca, (el) ->
-          # dont keep verifying if its already verified
-          if !$scope.record.validCA
-            $scope.record.validCA = $scope.record.isCa(el.content)
-            return
+        # angular.forEach $scope.nom151Ca, (el) ->
+        #   # dont keep verifying if its already verified
+        #   if !$scope.record.validCA
+        #     $scope.record.validCA = $scope.record.isCa(el.content)
+        #     return
 
         $scope.record.tsTranslation =
           recordTS: $filter('date')($scope.record.recordTimestamp(), 'medium', 'UTC')
