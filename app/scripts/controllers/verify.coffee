@@ -39,7 +39,7 @@ angular.module 'xmlFiestaUiApp'
     $scope.clear()
 
     setRecordValues = ->
-      if $scope.doc.recordPresent && $scope.record instanceof XMLFiesta.ConservancyRecord
+      if $scope.doc.recordPresent && ($scope.record instanceof XMLFiesta.ConservancyRecord || $scope.record instanceof XMLFiesta.ConservancyRecordNom2016 )
         $scope.record.valid = $scope.record.valid()
         $scope.record.validTS = $scope.record.equalTimestamps()
         $scope.record.validCA = true
