@@ -8,6 +8,7 @@ module.exports = (config) ->
     basePath: '../'
 
     files: [
+      'test/polifills.js'
       # bower:js
       'bower_components/jquery/dist/jquery.js'
       'bower_components/angular/angular.js'
