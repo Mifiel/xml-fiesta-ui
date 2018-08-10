@@ -3,7 +3,6 @@ node_js:
   - "9"
 
 before_install:
-  - npm install -qg npm@2.14.12
   - npm install -qg grunt-cli
   - npm install -qg bower
   - gem install compass
