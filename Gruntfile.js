@@ -274,7 +274,7 @@ module.exports = function (grunt) {
           html: {
             steps: {
               js: ['concat', 'uglifyjs'],
-              css: ['cssmin']
+              // css: ['cssmin']
             },
             post: {}
           }
@@ -411,6 +411,11 @@ module.exports = function (grunt) {
           src: ['generated/*']
         }, {
           expand: true,
+          cwd: '.tmp/styles',
+          dest: '<%= yeoman.dist %>/styles',
+          src: ['*']
+        }, {
+          expand: true,
           cwd: '.',
           src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
           dest: '<%= yeoman.dist %>'
@@ -534,7 +539,7 @@ module.exports = function (grunt) {
     'concat',
     'ngAnnotate',
     'copy:dist',
-    'cssmin',
+    // 'cssmin',
     'uglify',
     'filerev',
     'usemin',
