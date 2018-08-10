@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "4.3"
+  - "9"
 
 before_install:
   - npm install -qg npm@2.14.12
