@@ -1,5 +1,8 @@
 # CHANGELOG
 
+# V1.1.6 - 2016 Conservancy Record - 10.Ago.2018
+- Add support for NOM 2016
+
 # V1.1.5 - Conservancy Record CA validation - 16.Feb.2018
 - Remove verification of NOM151 against CA, the NOM151 changed the way the PKI is managed and they haven't provided the new root CA for validations.
 
