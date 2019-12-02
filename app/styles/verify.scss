@@ -1,39 +1,39 @@
-.verify {
 
-	.verify-info {
-		line-height: 2;
+.mi_VerifyXml {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+  }
 
-		.alert-danger {
-		  color: #E9573F;
-		  background-color: #FBEEEC;
-		  padding: 20px 20px;
-		  border-radius: 2px;
-		  margin: 15px 0px;
-		  font-size: 13px;		
-		  border: 0px;
-		}
+  .alert-danger {
+    color: $mi-core-color-red-300;
+    background-color: $mi-core-color-red-050;
+    margin: $mi-core-spacing-2-x 0px;
+    border: 0;
+  }
 
-		p {
-			line-height: 1.4;
-		}
+  .alert-warning {
+    color: $mi-core-color-neutral-650;
+    background-color: $mi-core-color-yellow-100;
+    border: 0;
+    width: 100%;
+  }
 
-		a {
-			color: #ED5565;
-			text-decoration: underline;
-		}
+  .btn-success {
+    color: $mi-core-color-neutral-000;
+    background-color: $mi-core-color-green-250;
 
-		a:hover {
-			color: #444;
-		}
+    &-hover {
+      background-color: $mi-components-button-appearance-primary-vexbi-hover-background-color;
+    }
+  }
 
-		strong {
-			text-transform: uppercase;
-		}
-
-		.text-break {
-			word-wrap: break-word;
-		}
-
-	}
-
+  &-attributeName {
+    color: $mi-core-color-neutral-350;
+  }
 }
