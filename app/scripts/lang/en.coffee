@@ -5,11 +5,10 @@ angular.module 'xmlFiestaUiApp'
       VERIFY: 'Verify XML'
       CONTACT: 'Contact'
       CONFIGURATION: 'Configuration'
-
     VERIFY:
       ENCRYPT:
-        ALERT: "is an encrypted document. Click here to decrypt and download the signed document."
-        INFORMATION_NOT_AVAILABLE: "This information is not available because it belongs to an encrypted document."
-        NOTE: "We can't show the contents of this document because it is encrypted."
-        DECRYPT_DOCUMENT: "Decrypt document"
+        ALERT: "Since you loaded an encrypted XML of the signed document, we cannot validate the Original Hash or the Signature. To validate all fields, click on “Validate another document” and load the decrypted XML of the signed document."
+        HASH_NOT_AVAILABLE: "The original hash cannot be validated because the XML you loaded is encrypted."
+        SIGNATURE_NOT_AVAILABLE: "The signature cannot be validated because the XML you loaded is encrypted."
+        NOTE: "We can't show the contents of the signed document because the XML is encrypted. To visualize its contents, click on “Validate another document” and load the decrypted XML of the signed document."
   }

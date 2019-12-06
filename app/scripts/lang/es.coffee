@@ -43,11 +43,10 @@ angular.module 'xmlFiestaUiApp'
         WRONG_ARCHIVE: 'El documento o las firmas han sido modificados desde la emisión de la constancia.'
         VALID_ARCHIVE: 'La constancia de conservación coincide con documento y firmas.'
       ENCRYPT:
-        ALERT: "es un documento encriptado. Entra aquí para desencriptar y descargar el documento firmado."
-        INFORMATION_NOT_AVAILABLE: "Esta información no está disponible porque pertenece a un documento encriptado."
-        NOTE: "No podemos mostrar el contenido de este documento ya que se encuentra encriptado."
-        DECRYPT_DOCUMENT: "Desencriptar documento"
-
+        ALERT: "Debido a que cargaste un XML encriptado del documento firmado, no podemos validar el Hash Original ni la Firma. Para validar todos los campos, presiona “Validar otro documento” y carga el XML desencriptado del documento firmado."
+        HASH_NOT_AVAILABLE: "El Hash Original no puede ser validado porque el XML que cargaste está encriptado."
+        SIGNATURE_NOT_AVAILABLE: "La firma no puede ser validada porque el XML que cargaste está encriptado."
+        NOTE: "No podemos mostrar el contenido del documento firmado porque el XML está encriptado. Para visualizar su contenido, presiona “Validar otro documento” y carga el XML desencriptado del documento firmado."
     FAQ:
       ABOUT: 'Acerca de'
       INTRO: 'XML Fiesta es una herramienta para validar Firmas Electrónicas Avanzadas.'
