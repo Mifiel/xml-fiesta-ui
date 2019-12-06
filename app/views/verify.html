@@ -42,7 +42,7 @@
 
   <section class="row mi_VerifyXml" ng-show="pdfUrl && !loading">
     <h2 class="col-xs-12 mi_u-fontWeightBold mi_u-marginB3X mi_u-textAlignCenter">{{ 'VERIFY.VALIDATIONS' | translate }}</h2>
-    <div class="alert alert-warning mi_u-textAlignCenter mi_u-inlineBlock" ng-if="doc.encrypted"><p class="mi_u-inlineBlock">{{ 'VERIFY.ENCRYPT.ALERT' | translate }}</p></div>
+    <div class="alert alert-warning mi_u-textAlignCenter mi_u-inlineBlock" ng-if="doc.encrypted"><p class="mi_u-inlineBlock" translate="VERIFY.ENCRYPT.ALERT"></p></div>
     <p class="col-xs-12 mi_u-marginB8X">{{ 'VERIFY.REMINDER' | translate }}</p>
     <strong class="col-xs-12 mi_u-fontWeightBold mi_u-marginB2X">
       {{ 'VERIFY.INFORMATION_DOCUMENT' | translate }}
@@ -169,7 +169,7 @@
 
     <div class="col-xs-12" ng-if="doc.encrypted">
       <hr class="mi_u-divider" />
-      <p class="mi_VerifyXml-note mi_u-marginB3X mi_u-fontWeightBold mi_u-textAlignCenter">{{ 'VERIFY.ENCRYPT.NOTE' | translate }}</p>
+      <p class="mi_VerifyXml-note mi_u-marginB3X mi_u-fontWeightBold mi_u-textAlignCenter" translate="VERIFY.ENCRYPT.NOTE"></p>
     </div>
 
     <div id="pdf-container" class="col-xs-12 mi_u-textAlignCenter mi_u-marginB3X">
