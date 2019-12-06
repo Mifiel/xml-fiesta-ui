@@ -36,4 +36,9 @@
   &-attributeName {
     color: $mi-core-color-neutral-350;
   }
+
+  &-note {
+    max-width: 40rem;
+    margin: auto !important;
+  }
 }
