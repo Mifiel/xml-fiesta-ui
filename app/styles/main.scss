@@ -1,5 +1,7 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
-@import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
+// bower:scss
+@import 'bootstrap-sass-official/assets/stylesheets/bootstrap.scss';
+// endbower
 @import '../../node_modules/@nucleus/ui-tokens/dist/web/tokens.scss';
 
 @import 'utils/index';
