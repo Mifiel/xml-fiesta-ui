@@ -1,0 +1,44 @@
+
+.mi_VerifyXml {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+  }
+
+  .alert-danger {
+    color: $mi-core-color-red-300;
+    background-color: $mi-core-color-red-050;
+    margin: $mi-core-spacing-2-x 0px;
+    border: 0;
+  }
+
+  .alert-warning {
+    color: $mi-core-color-neutral-650;
+    background-color: $mi-core-color-yellow-100;
+    border: 0;
+    width: 100%;
+  }
+
+  .btn-success {
+    color: $mi-core-color-neutral-000;
+    background-color: $mi-core-color-green-250;
+
+    &-hover {
+      background-color: $mi-components-button-appearance-primary-vexbi-hover-background-color;
+    }
+  }
+
+  &-attributeName {
+    color: $mi-core-color-neutral-350;
+  }
+
+  &-note {
+    max-width: 40rem;
+    margin: auto !important;
+  }
+}

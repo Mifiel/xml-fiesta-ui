@@ -31,6 +31,8 @@ angular.module 'xmlFiestaUiApp'
       WRONG_CERT: 'El certificado no fue firmado con ninguno de los certificados raíz que cargaste en la página de configuración. Asegúrate de haber cargado todos los certificados raíz de la autoridad que emitió el certificado usado para firmar. Si este error persiste significa que el certificado no fue emitido por la autoridad certificadora dueña de los certificados raíz.'
       WRONG_SIG: 'La Firma no es válida, pudo haber sido modificada o no se usó la llave privada correspondiente al certificado mencionado anteriormente.'
       LOADING: 'Validando documento...'
+      INFORMATION_DOCUMENT: 'Información identificadora del documento firmado'
+      INFORMATION_SIGNER: 'Información identificadora de cada firmante'
       CONSERVANCY_RECORD: 'Constancia de conservación'
       RECORD:
         ISSUER: 'Emisor'
@@ -40,7 +42,11 @@ angular.module 'xmlFiestaUiApp'
         WRONG_CR: 'La constancia de conservación en el XML no está presente o no tiene una esctructura válida.'
         WRONG_ARCHIVE: 'El documento o las firmas han sido modificados desde la emisión de la constancia.'
         VALID_ARCHIVE: 'La constancia de conservación coincide con documento y firmas.'
-
+      ENCRYPT:
+        ALERT: "Debido a que cargaste un <b>XML encriptado</b> del documento firmado, no podemos validar el Hash Original ni la Firma. Para validar todos los campos, presiona “Validar otro documento” y carga el <b>XML desencriptado</b> del documento firmado."
+        HASH_NOT_AVAILABLE: "El Hash Original no puede ser validado porque el XML que cargaste está encriptado."
+        SIGNATURE_NOT_AVAILABLE: "La firma no puede ser validada porque el XML que cargaste está encriptado."
+        NOTE: "No podemos mostrar el contenido del documento firmado porque el XML está encriptado. Para visualizar su contenido, presiona “Validar otro documento” y carga el <b>XML desencriptado</b> del documento firmado."
     FAQ:
       ABOUT: 'Acerca de'
       INTRO: 'XML Fiesta es una herramienta para validar Firmas Electrónicas Avanzadas.'
