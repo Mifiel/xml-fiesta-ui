@@ -7946,15 +7946,506 @@ button.close {
     display: none !important;
   }
 }
-/* line 1, ../../app/styles/upload.scss */
+/*
+  Do not edit directly
+  Generated on Fri, 18 Oct 2019 21:24:06 GMT
+*/
+/* line 1, ../../app/styles/utils/_alignment.scss */
+.mi_u-textAlignCenter {
+  text-align: center !important;
+}
+
+/* line 5, ../../app/styles/utils/_alignment.scss */
+.mi_u-textAlignLeft {
+  text-align: left !important;
+}
+
+/* line 9, ../../app/styles/utils/_alignment.scss */
+.mi_u-textAlignRight {
+  text-align: right !important;
+}
+
+/* line 13, ../../app/styles/utils/_alignment.scss */
+.mi_u-textAlignJustify {
+  text-align: justify !important;
+}
+
+/* line 1, ../../app/styles/utils/_colors.scss */
+.mi_u-coreNeutral600 {
+  color: #2D3844 !important;
+}
+
+/* line 5, ../../app/styles/utils/_colors.scss */
+.mi_u-colorGreen300 {
+  color: #1AA986 !important;
+}
+
+/* line 9, ../../app/styles/utils/_colors.scss */
+.mi_u-colorYellow300 {
+  color: #FFC400 !important;
+}
+
+/* line 13, ../../app/styles/utils/_colors.scss */
+.mi_u-colorRed250 {
+  color: #EC1B49 !important;
+}
+
+/* line 1, ../../app/styles/utils/_display.scss */
+.mi_u-block {
+  display: block !important;
+}
+
+/* line 5, ../../app/styles/utils/_display.scss */
+.mi_u-inlineBlock {
+  display: inline-block !important;
+}
+
+/* line 9, ../../app/styles/utils/_display.scss */
+.mi_u-none {
+  display: none !important;
+}
+
+/* line 1, ../../app/styles/utils/_others.scss */
+.mi_u-divider {
+  border-bottom: 0;
+  border-top: 1px solid #EBECED;
+  margin: 1rem 0;
+}
+
+/* line 1, ../../app/styles/utils/_spacing.scss */
+.mi_u-margin1X {
+  margin: 0.5rem !important;
+}
+
+/* line 5, ../../app/styles/utils/_spacing.scss */
+.mi_u-margin2X {
+  margin: 1rem !important;
+}
+
+/* line 9, ../../app/styles/utils/_spacing.scss */
+.mi_u-margin3X {
+  margin: 1.5rem !important;
+}
+
+/* line 13, ../../app/styles/utils/_spacing.scss */
+.mi_u-margin4X {
+  margin: 2rem !important;
+}
+
+/* line 17, ../../app/styles/utils/_spacing.scss */
+.mi_u-margin5X {
+  margin: 2.5rem !important;
+}
+
+/* line 21, ../../app/styles/utils/_spacing.scss */
+.mi_u-margin6X {
+  margin: 3rem !important;
+}
+
+/* line 25, ../../app/styles/utils/_spacing.scss */
+.mi_u-margin7X {
+  margin: 3.5rem !important;
+}
+
+/* line 29, ../../app/styles/utils/_spacing.scss */
+.mi_u-margin8X {
+  margin: 4rem !important;
+}
+
+/* line 33, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginB1X {
+  margin-bottom: 0.5rem !important;
+}
+
+/* line 37, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginB2X {
+  margin-bottom: 1rem !important;
+}
+
+/* line 41, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginB3X {
+  margin-bottom: 1.5rem !important;
+}
+
+/* line 45, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginB4X {
+  margin-bottom: 2rem !important;
+}
+
+/* line 49, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginB5X {
+  margin-bottom: 2.5rem !important;
+}
+
+/* line 53, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginB6X {
+  margin-bottom: 3rem !important;
+}
+
+/* line 57, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginB7X {
+  margin-bottom: 3.5rem !important;
+}
+
+/* line 61, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginB8X {
+  margin-bottom: 4rem !important;
+}
+
+/* line 65, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginT1X {
+  margin-top: 0.5rem !important;
+}
+
+/* line 69, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginT2X {
+  margin-top: 1rem !important;
+}
+
+/* line 73, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginT3X {
+  margin-top: 1.5rem !important;
+}
+
+/* line 77, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginT4X {
+  margin-top: 2rem !important;
+}
+
+/* line 81, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginT5X {
+  margin-top: 2.5rem !important;
+}
+
+/* line 85, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginT6X {
+  margin-top: 3rem !important;
+}
+
+/* line 89, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginT7X {
+  margin-top: 3.5rem !important;
+}
+
+/* line 93, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginT8X {
+  margin-top: 4rem !important;
+}
+
+/* line 97, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginR1X {
+  margin-right: 0.5rem !important;
+}
+
+/* line 101, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginR2X {
+  margin-right: 1rem !important;
+}
+
+/* line 105, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginR3X {
+  margin-right: 1.5rem !important;
+}
+
+/* line 109, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginR4X {
+  margin-right: 2rem !important;
+}
+
+/* line 113, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginR5X {
+  margin-right: 2.5rem !important;
+}
+
+/* line 117, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginR6X {
+  margin-right: 3rem !important;
+}
+
+/* line 121, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginR7X {
+  margin-right: 3.5rem !important;
+}
+
+/* line 125, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginR8X {
+  margin-right: 4rem !important;
+}
+
+/* line 129, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginL1X {
+  margin-left: 0.5rem !important;
+}
+
+/* line 133, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginL2X {
+  margin-left: 1rem !important;
+}
+
+/* line 137, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginL3X {
+  margin-left: 1.5rem !important;
+}
+
+/* line 141, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginL4X {
+  margin-left: 2rem !important;
+}
+
+/* line 145, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginL5X {
+  margin-left: 2.5rem !important;
+}
+
+/* line 149, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginL6X {
+  margin-left: 3rem !important;
+}
+
+/* line 153, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginL7X {
+  margin-left: 3.5rem !important;
+}
+
+/* line 157, ../../app/styles/utils/_spacing.scss */
+.mi_u-marginL8X {
+  margin-left: 4rem !important;
+}
+
+/* line 161, ../../app/styles/utils/_spacing.scss */
+.mi_u-padding1X {
+  padding: 0.5rem !important;
+}
+
+/* line 165, ../../app/styles/utils/_spacing.scss */
+.mi_u-padding2X {
+  padding: 1rem !important;
+}
+
+/* line 169, ../../app/styles/utils/_spacing.scss */
+.mi_u-padding3X {
+  padding: 1.5rem !important;
+}
+
+/* line 173, ../../app/styles/utils/_spacing.scss */
+.mi_u-padding4X {
+  padding: 2rem !important;
+}
+
+/* line 177, ../../app/styles/utils/_spacing.scss */
+.mi_u-padding5X {
+  padding: 2.5rem !important;
+}
+
+/* line 181, ../../app/styles/utils/_spacing.scss */
+.mi_u-padding6X {
+  padding: 3rem !important;
+}
+
+/* line 185, ../../app/styles/utils/_spacing.scss */
+.mi_u-padding7X {
+  padding: 3.5rem !important;
+}
+
+/* line 189, ../../app/styles/utils/_spacing.scss */
+.mi_u-padding8X {
+  padding: 4rem !important;
+}
+
+/* line 193, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingB1X {
+  padding-bottom: 0.5rem !important;
+}
+
+/* line 197, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingB2X {
+  padding-bottom: 1rem !important;
+}
+
+/* line 201, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingB3X {
+  padding-bottom: 1.5rem !important;
+}
+
+/* line 205, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingB4X {
+  padding-bottom: 2rem !important;
+}
+
+/* line 209, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingB5X {
+  padding-bottom: 2.5rem !important;
+}
+
+/* line 213, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingB6X {
+  padding-bottom: 3rem !important;
+}
+
+/* line 217, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingB7X {
+  padding-bottom: 3.5rem !important;
+}
+
+/* line 221, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingB8X {
+  padding-bottom: 4rem !important;
+}
+
+/* line 225, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingT1X {
+  padding-top: 0.5rem !important;
+}
+
+/* line 229, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingT2X {
+  padding-top: 1rem !important;
+}
+
+/* line 233, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingT3X {
+  padding-top: 1.5rem !important;
+}
+
+/* line 237, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingT4X {
+  padding-top: 2rem !important;
+}
+
+/* line 241, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingT5X {
+  padding-top: 2.5rem !important;
+}
+
+/* line 245, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingT6X {
+  padding-top: 3rem !important;
+}
+
+/* line 249, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingT7X {
+  padding-top: 3.5rem !important;
+}
+
+/* line 253, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingT8X {
+  padding-top: 4rem !important;
+}
+
+/* line 257, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingR1X {
+  padding-right: 0.5rem !important;
+}
+
+/* line 261, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingR2X {
+  padding-right: 1rem !important;
+}
+
+/* line 265, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingR3X {
+  padding-right: 1.5rem !important;
+}
+
+/* line 269, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingR4X {
+  padding-right: 2rem !important;
+}
+
+/* line 273, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingR5X {
+  padding-right: 2.5rem !important;
+}
+
+/* line 277, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingR6X {
+  padding-right: 3rem !important;
+}
+
+/* line 281, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingR7X {
+  padding-right: 3.5rem !important;
+}
+
+/* line 285, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingR8X {
+  padding-right: 4rem !important;
+}
+
+/* line 289, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingL1X {
+  padding-left: 0.5rem !important;
+}
+
+/* line 293, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingL2X {
+  padding-left: 1rem !important;
+}
+
+/* line 297, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingL3X {
+  padding-left: 1.5rem !important;
+}
+
+/* line 301, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingL4X {
+  padding-left: 2rem !important;
+}
+
+/* line 305, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingL5X {
+  padding-left: 2.5rem !important;
+}
+
+/* line 309, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingL6X {
+  padding-left: 3rem !important;
+}
+
+/* line 313, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingL7X {
+  padding-left: 3.5rem !important;
+}
+
+/* line 317, ../../app/styles/utils/_spacing.scss */
+.mi_u-paddingL8X {
+  padding-left: 4rem !important;
+}
+
+/* line 1, ../../app/styles/utils/_text.scss */
+.mi_u-fontWeightBold {
+  font-weight: bold !important;
+}
+
+/* line 5, ../../app/styles/utils/_text.scss */
+.mi_u-textBreakAll {
+  word-break: break-all !important;
+}
+
+/* line 9, ../../app/styles/utils/_text.scss */
+.mi_u-textTransformUppercase {
+  text-transform: uppercase !important;
+}
+
+/* line 13, ../../app/styles/utils/_text.scss */
+.mi_u-textTransformLowercase {
+  text-transform: lowercase !important;
+}
+
+/* line 17, ../../app/styles/utils/_text.scss */
+.mi_u-textDecorationUnderline {
+  text-decoration: underline !important;
+}
+
+/* line 1, ../../app/styles/_upload.scss */
 .upload {
   position: relative;
 }
-/* line 3, ../../app/styles/upload.scss */
+/* line 3, ../../app/styles/_upload.scss */
 .upload * {
   z-index: 2;
 }
-/* line 6, ../../app/styles/upload.scss */
+/* line 6, ../../app/styles/_upload.scss */
 .upload .file-upload-input {
   position: absolute;
   margin: 0;
@@ -7968,39 +8459,39 @@ button.close {
   cursor: pointer;
   z-index: 1;
 }
-/* line 19, ../../app/styles/upload.scss */
+/* line 19, ../../app/styles/_upload.scss */
 .upload .upload-default {
   padding: 60px 20px;
   border: 4px dotted #ddd;
 }
-/* line 24, ../../app/styles/upload.scss */
+/* line 24, ../../app/styles/_upload.scss */
 .upload .btn {
   background-color: #2bb673;
   border-color: #2bb673;
   color: white;
   padding: 12px 20px;
 }
-/* line 31, ../../app/styles/upload.scss */
+/* line 31, ../../app/styles/_upload.scss */
 .upload.image-dropping, .upload.image-upload-wrap:hover {
   background-color: #2bb673;
   border-color: #fff;
   color: #fff;
 }
-/* line 37, ../../app/styles/upload.scss */
+/* line 37, ../../app/styles/_upload.scss */
 .upload.image-dropping .btn, .upload.image-upload-wrap:hover .btn {
   border-color: #fff;
 }
 
-/* line 43, ../../app/styles/upload.scss */
+/* line 43, ../../app/styles/_upload.scss */
 #pdf-container {
   margin-top: 40px;
 }
-/* line 46, ../../app/styles/upload.scss */
+/* line 46, ../../app/styles/_upload.scss */
 #pdf-container .pdf-controls {
   width: 100%;
   display: block;
 }
-/* line 51, ../../app/styles/upload.scss */
+/* line 51, ../../app/styles/_upload.scss */
 #pdf-container .fixed {
   position: fixed;
   top: 0;
@@ -8012,43 +8503,50 @@ button.close {
   width: 960px;
 }
 
-/* line 3, ../../app/styles/verify.scss */
-.verify .verify-info {
-  line-height: 2;
+/* line 3, ../../app/styles/_verify.scss */
+.mi_VerifyXml h1,
+.mi_VerifyXml h2,
+.mi_VerifyXml h3,
+.mi_VerifyXml h4,
+.mi_VerifyXml h5,
+.mi_VerifyXml h6,
+.mi_VerifyXml p {
+  margin: 0;
 }
-/* line 6, ../../app/styles/verify.scss */
-.verify .verify-info .alert-danger {
-  color: #E9573F;
-  background-color: #FBEEEC;
-  padding: 20px 20px;
-  border-radius: 2px;
-  margin: 15px 0px;
-  font-size: 13px;
-  border: 0px;
+/* line 13, ../../app/styles/_verify.scss */
+.mi_VerifyXml .alert-danger {
+  color: #BD163A;
+  background-color: #FBD1DB;
+  margin: 1rem 0px;
+  border: 0;
 }
-/* line 16, ../../app/styles/verify.scss */
-.verify .verify-info p {
-  line-height: 1.4;
+/* line 20, ../../app/styles/_verify.scss */
+.mi_VerifyXml .alert-warning {
+  color: #1C252E;
+  background-color: #FFF3CC;
+  border: 0;
+  width: 100%;
 }
-/* line 20, ../../app/styles/verify.scss */
-.verify .verify-info a {
-  color: #ED5565;
-  text-decoration: underline;
+/* line 27, ../../app/styles/_verify.scss */
+.mi_VerifyXml .btn-success {
+  color: #FFFFFF;
+  background-color: #14D0A6;
 }
-/* line 25, ../../app/styles/verify.scss */
-.verify .verify-info a:hover {
-  color: #444;
+/* line 31, ../../app/styles/_verify.scss */
+.mi_VerifyXml .btn-success-hover {
+  background-color: #2D3844;
 }
-/* line 29, ../../app/styles/verify.scss */
-.verify .verify-info strong {
-  text-transform: uppercase;
+/* line 36, ../../app/styles/_verify.scss */
+.mi_VerifyXml-attributeName {
+  color: #8C919C;
 }
-/* line 33, ../../app/styles/verify.scss */
-.verify .verify-info .text-break {
-  word-wrap: break-word;
+/* line 40, ../../app/styles/_verify.scss */
+.mi_VerifyXml-note {
+  max-width: 40rem;
+  margin: auto !important;
 }
 
-/* line 9, ../../app/styles/main.scss */
+/* line 11, ../../app/styles/main.scss */
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -8056,89 +8554,88 @@ button.close {
   padding: 0.2em 0;
 }
 
-/* line 16, ../../app/styles/main.scss */
+/* line 18, ../../app/styles/main.scss */
 body {
   padding: 0;
   font-family: "Raleway", Arial, sans-serif;
-  color: #333;
+  color: #646A75;
 }
 
-/* line 22, ../../app/styles/main.scss */
+/* line 24, ../../app/styles/main.scss */
 h1,
 h3 {
   font-weight: 600;
 }
 
-/* line 27, ../../app/styles/main.scss */
+/* line 29, ../../app/styles/main.scss */
 h2,
 h4 {
   font-weight: 200;
 }
 
-/* line 32, ../../app/styles/main.scss */
+/* line 34, ../../app/styles/main.scss */
 h5,
 p {
   font-weight: 400;
 }
 
-/* line 37, ../../app/styles/main.scss */
+/* line 39, ../../app/styles/main.scss */
 a {
-  color: #2bb673;
+  color: #14D0A6;
 }
-
-/* line 41, ../../app/styles/main.scss */
+/* line 42, ../../app/styles/main.scss */
 a:hover {
-  color: #333;
+  color: #323D48;
 }
 
-/* line 45, ../../app/styles/main.scss */
+/* line 47, ../../app/styles/main.scss */
 .text-small {
   font-size: 12px !important;
 }
 
-/* line 49, ../../app/styles/main.scss */
+/* line 51, ../../app/styles/main.scss */
 a.unstyled {
   text-decoration: none;
 }
 
-/* line 53, ../../app/styles/main.scss */
+/* line 55, ../../app/styles/main.scss */
 .navbar-nav a:hover, .navbar-nav a.active {
-  color: #2bb673 !important;
+  color: #14D0A6 !important;
   font-weight: 600;
-  border-bottom: 2px solid #2bb673 !important;
+  border-bottom: 2px solid #14D0A6 !important;
 }
 
-/* line 59, ../../app/styles/main.scss */
+/* line 61, ../../app/styles/main.scss */
 .navbar.navbar-default {
   margin-bottom: 0;
   border: 0;
 }
 
-/* line 64, ../../app/styles/main.scss */
+/* line 66, ../../app/styles/main.scss */
 .navbar-default {
   background-color: #fff;
 }
 
-/* line 68, ../../app/styles/main.scss */
+/* line 70, ../../app/styles/main.scss */
 .navbar li a {
   padding-top: 25px;
 }
 
-/* line 72, ../../app/styles/main.scss */
+/* line 74, ../../app/styles/main.scss */
 .navbar-header {
   padding-top: 10px;
 }
-/* line 75, ../../app/styles/main.scss */
+/* line 77, ../../app/styles/main.scss */
 .navbar-header a {
   font-weight: 600;
 }
 
-/* line 80, ../../app/styles/main.scss */
+/* line 82, ../../app/styles/main.scss */
 .navbar-brand {
   display: inline-block;
 }
 
-/* line 84, ../../app/styles/main.scss */
+/* line 86, ../../app/styles/main.scss */
 p.version {
   color: #aaa;
   display: inline-block;
@@ -8146,18 +8643,18 @@ p.version {
   padding-right: 30px;
 }
 
-/* line 91, ../../app/styles/main.scss */
+/* line 93, ../../app/styles/main.scss */
 .wrap-text {
   word-wrap: break-word;
 }
 
 /* Primary button for final or important calls to action (Bright green) */
-/* line 98, ../../app/styles/main.scss */
+/* line 100, ../../app/styles/main.scss */
 button {
   transition: all 0.3s ease 0s;
 }
 
-/* line 105, ../../app/styles/main.scss */
+/* line 107, ../../app/styles/main.scss */
 .btn-success {
   color: #ffffff;
   text-shadow: none;
@@ -8167,7 +8664,7 @@ button {
   border: 0px solid #2bb673;
 }
 
-/* line 114, ../../app/styles/main.scss */
+/* line 116, ../../app/styles/main.scss */
 .btn-success:hover,
 .btn-success:focus,
 .btn-success.focus,
@@ -8181,13 +8678,13 @@ button {
   border: 0px solid #555555;
 }
 
-/* line 127, ../../app/styles/main.scss */
+/* line 129, ../../app/styles/main.scss */
 .btn-lg, .btn-group-lg > .btn {
   font-size: 16px;
   padding: 15px 20px;
 }
 
-/* line 132, ../../app/styles/main.scss */
+/* line 134, ../../app/styles/main.scss */
 .btn-delete {
   color: #fff;
   text-shadow: none;
@@ -8197,7 +8694,7 @@ button {
   border: 1px solid #ED5565;
 }
 
-/* line 141, ../../app/styles/main.scss */
+/* line 143, ../../app/styles/main.scss */
 .btn-delete:hover,
 .btn-delete:focus,
 .btn-delete.focus,
@@ -8212,7 +8709,7 @@ button {
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
-/* line 155, ../../app/styles/main.scss */
+/* line 157, ../../app/styles/main.scss */
 .header,
 .marketing,
 .footer {
@@ -8221,13 +8718,13 @@ button {
 }
 
 /* Custom page header */
-/* line 163, ../../app/styles/main.scss */
+/* line 165, ../../app/styles/main.scss */
 .header {
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
   /* Make the masthead heading the same height as the navigation */
 }
-/* line 168, ../../app/styles/main.scss */
+/* line 170, ../../app/styles/main.scss */
 .header h3 {
   margin-top: 0;
   margin-bottom: 0;
@@ -8236,7 +8733,7 @@ button {
 }
 
 /* Custom page footer */
-/* line 177, ../../app/styles/main.scss */
+/* line 179, ../../app/styles/main.scss */
 .footer {
   padding-top: 25px;
   padding-bottom: 20px;
@@ -8247,52 +8744,52 @@ button {
   bottom: 0;
   width: 100%;
 }
-/* line 187, ../../app/styles/main.scss */
+/* line 189, ../../app/styles/main.scss */
 .footer p {
   font-size: 12px;
 }
 
-/* line 192, ../../app/styles/main.scss */
+/* line 194, ../../app/styles/main.scss */
 .content {
   margin-bottom: 50px;
 }
 
-/* line 196, ../../app/styles/main.scss */
+/* line 198, ../../app/styles/main.scss */
 .container-narrow > hr {
   margin: 30px 0;
 }
 
 /* Main marketing message and sign up button */
-/* line 201, ../../app/styles/main.scss */
+/* line 203, ../../app/styles/main.scss */
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 }
-/* line 205, ../../app/styles/main.scss */
+/* line 207, ../../app/styles/main.scss */
 .jumbotron .btn {
   font-size: 21px;
   padding: 14px 24px;
 }
 
 /* Supporting marketing content */
-/* line 212, ../../app/styles/main.scss */
+/* line 214, ../../app/styles/main.scss */
 .marketing {
   margin: 40px 0;
 }
-/* line 215, ../../app/styles/main.scss */
+/* line 217, ../../app/styles/main.scss */
 .marketing p + h4 {
   margin-top: 28px;
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  /* line 222, ../../app/styles/main.scss */
+  /* line 224, ../../app/styles/main.scss */
   .container {
     max-width: 840px;
   }
 
   /* Remove the padding we set earlier */
-  /* line 227, ../../app/styles/main.scss */
+  /* line 229, ../../app/styles/main.scss */
   .header,
   .marketing,
   .footer {
@@ -8301,103 +8798,103 @@ button {
   }
 
   /* Space out the masthead */
-  /* line 234, ../../app/styles/main.scss */
+  /* line 236, ../../app/styles/main.scss */
   .header {
     margin-bottom: 30px;
   }
 
   /* Remove the bottom border on the jumbotron for visual effect */
-  /* line 238, ../../app/styles/main.scss */
+  /* line 240, ../../app/styles/main.scss */
   .jumbotron {
     border-bottom: 0;
   }
 }
-/* line 244, ../../app/styles/main.scss */
+/* line 246, ../../app/styles/main.scss */
 .header {
   border-bottom: 1px solid #eee;
 }
 
-/* line 248, ../../app/styles/main.scss */
+/* line 250, ../../app/styles/main.scss */
 .verify {
   padding-top: 30px;
   padding-bottom: 120px;
 }
-/* line 253, ../../app/styles/main.scss */
+/* line 254, ../../app/styles/main.scss */
 .verify #instructions {
   text-align: center;
 }
-/* line 256, ../../app/styles/main.scss */
+/* line 257, ../../app/styles/main.scss */
 .verify #instructions p {
   text-align: justify;
 }
-/* line 260, ../../app/styles/main.scss */
+/* line 261, ../../app/styles/main.scss */
 .verify #instructions object {
   padding-top: 20px;
 }
-/* line 266, ../../app/styles/main.scss */
+/* line 267, ../../app/styles/main.scss */
 .verify .text-success {
   color: #2bb673;
 }
-/* line 270, ../../app/styles/main.scss */
+/* line 271, ../../app/styles/main.scss */
 .verify .text-danger {
   color: #ED5565;
 }
-/* line 275, ../../app/styles/main.scss */
+/* line 276, ../../app/styles/main.scss */
 .verify .list-unstyled li, .verify .list-inline li {
   margin: 5px 0px;
 }
-/* line 278, ../../app/styles/main.scss */
+/* line 279, ../../app/styles/main.scss */
 .verify .list-unstyled li strong, .verify .list-inline li strong {
   text-transform: uppercase;
 }
-/* line 284, ../../app/styles/main.scss */
+/* line 285, ../../app/styles/main.scss */
 .verify td {
   padding: 7px 40px;
 }
-/* line 288, ../../app/styles/main.scss */
+/* line 289, ../../app/styles/main.scss */
 .verify table#signers {
   margin-top: 50px;
 }
-/* line 292, ../../app/styles/main.scss */
+/* line 293, ../../app/styles/main.scss */
 .verify table#general-info {
   margin-top: 30px;
 }
 
-/* line 298, ../../app/styles/main.scss */
+/* line 299, ../../app/styles/main.scss */
 .config {
   padding-top: 30px;
   padding-bottom: 120px;
 }
-/* line 302, ../../app/styles/main.scss */
+/* line 303, ../../app/styles/main.scss */
 .config p.help-block {
   margin: 0px;
 }
-/* line 306, ../../app/styles/main.scss */
+/* line 307, ../../app/styles/main.scss */
 .config .upload-certificates {
   padding-bottom: 25px;
   padding-top: 40px;
 }
-/* line 311, ../../app/styles/main.scss */
+/* line 312, ../../app/styles/main.scss */
 .config .proceed-verify {
   padding-bottom: 20px;
   margin-top: -40px;
   border-bottom: 1px solid #ddd;
 }
-/* line 316, ../../app/styles/main.scss */
+/* line 317, ../../app/styles/main.scss */
 .config .proceed-verify button {
   display: inline-block;
 }
-/* line 320, ../../app/styles/main.scss */
+/* line 321, ../../app/styles/main.scss */
 .config .proceed-verify h4 {
   margin-right: 40px;
   display: inline-block;
 }
-/* line 325, ../../app/styles/main.scss */
+/* line 326, ../../app/styles/main.scss */
 .config .proceed-verify .btn-lg, .config .proceed-verify .btn-group-lg > .btn {
   font-size: 14px;
   padding: 14px 30px;
 }
-/* line 331, ../../app/styles/main.scss */
+/* line 332, ../../app/styles/main.scss */
 .config .root-certificates {
   padding-top: 25px;
   border: 1px solid #ddd;
@@ -8405,47 +8902,47 @@ button {
   margin-top: 30px;
   padding: 20px 30px;
 }
-/* line 338, ../../app/styles/main.scss */
+/* line 339, ../../app/styles/main.scss */
 .config .root-certificates li {
   margin: 5px 0px;
 }
-/* line 342, ../../app/styles/main.scss */
+/* line 343, ../../app/styles/main.scss */
 .config .root-certificates h4 {
   font-weight: 600;
 }
-/* line 347, ../../app/styles/main.scss */
+/* line 348, ../../app/styles/main.scss */
 .config .btn-delete {
   display: inline-block;
 }
-/* line 351, ../../app/styles/main.scss */
+/* line 352, ../../app/styles/main.scss */
 .config p.delete-text {
   color: #777;
   font-size: 13px;
   display: inline-block;
 }
 
-/* line 359, ../../app/styles/main.scss */
+/* line 360, ../../app/styles/main.scss */
 .top-padder-md {
   padding-top: 20px;
 }
 
-/* line 363, ../../app/styles/main.scss */
+/* line 364, ../../app/styles/main.scss */
 .margin-right-sm {
   margin-right: 10px;
 }
 
-/* line 367, ../../app/styles/main.scss */
+/* line 368, ../../app/styles/main.scss */
 .bottom-padder-md {
   padding-bottom: 20px;
 }
 
-/* line 371, ../../app/styles/main.scss */
+/* line 372, ../../app/styles/main.scss */
 .center {
   text-align: center;
 }
 
 /* CSS for the Email Us banner */
-/* line 377, ../../app/styles/main.scss */
+/* line 378, ../../app/styles/main.scss */
 .contact {
   border-top: 1px solid #ddd;
   margin-top: 40px;
@@ -8453,12 +8950,12 @@ button {
   padding: 20px 30px;
   text-align: center;
 }
-/* line 384, ../../app/styles/main.scss */
+/* line 385, ../../app/styles/main.scss */
 .contact h3 {
   margin-top: 0px;
   margin-bottom: 20px;
 }
-/* line 389, ../../app/styles/main.scss */
+/* line 390, ../../app/styles/main.scss */
 .contact .btn-md {
   padding: 12px 20px;
 }
