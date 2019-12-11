@@ -1,5 +1,9 @@
 # CHANGELOG
 
+# V1.2.0 - Encrypted documents - 10.Dec.2019
+- Add support for encrypted documents
+- Upgrade xml-fiesta-js with encrypted docs and several bug fixes
+
 # V1.1.6 - 2016 Conservancy Record - 10.Ago.2018
 - Add support for NOM 2016
 

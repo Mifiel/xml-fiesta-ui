@@ -33,126 +33,125 @@
         <div ng-show="loading">
           <h4>{{ 'VERIFY.LOADING' | translate }}</h4>
         </div>
-        <div class="text-danger" ng-show="error">
+        <div class="mi_u-colorRed250" ng-show="error">
           <h4>{{ error }}</h4>
         </div>
       </div>
     </div>
   </div>
 
-  <div ng-show="pdfUrl && !loading">
-    <h2 class="center">{{ 'VERIFY.VALIDATIONS' | translate }}</h2>
-
-    <p class="help-block">{{ 'VERIFY.REMINDER' | translate }}</p>
-    <div class="verify-info row top-padder-md">
-
-      <div class="col-md-3 col-sm-4">
-        <strong>{{ 'VERIFY.DOCUMENT_NAME' | translate }}</strong>
+  <section class="row mi_VerifyXml" ng-show="pdfUrl && !loading">
+    <h2 class="col-xs-12 mi_u-fontWeightBold mi_u-marginB3X mi_u-textAlignCenter">{{ 'VERIFY.VALIDATIONS' | translate }}</h2>
+    <div class="alert alert-warning mi_u-textAlignCenter mi_u-inlineBlock" ng-if="doc.encrypted"><p class="mi_u-inlineBlock" translate="VERIFY.ENCRYPT.ALERT"></p></div>
+    <p class="col-xs-12 mi_u-marginB8X">{{ 'VERIFY.REMINDER' | translate }}</p>
+    <strong class="col-xs-12 mi_u-fontWeightBold mi_u-marginB2X">
+      {{ 'VERIFY.INFORMATION_DOCUMENT' | translate }}
+    </strong>
+    <div class="col-md-3 col-sm-4 mi_u-coreNeutral600 mi_u-marginB1X">
+      <strong class="mi_u-fontWeightBold mi_u-textTransformUppercase">{{ 'VERIFY.DOCUMENT_NAME' | translate }}</strong>
+    </div>
+    <div class="col-md-9 col-sm-8 mi_u-fontWeightBold mi_u-coreNeutral600 mi_u-marginB1X mi_u-textBreakAll">
+      {{ doc.name }}
+    </div>
+    <div class="mi_VerifyXml-attributeName col-md-3 col-sm-4 mi_u-marginB1X" ng-class="{'mi_u-colorGreen300': oHashValid, 'mi_u-colorRed250': !oHashValid, 'mi_u-colorYellow300': doc.encrypted}">
+      <strong class="mi_u-fontWeightBold mi_u-textTransformUppercase">{{ 'VERIFY.ORIG_HASH' | translate }}<i class="glyphicon" ng-class="{'glyphicon-ok': oHashValid, 'glyphicon-remove': !oHashValid, 'glyphicon-lock': doc.encrypted}"></i></strong>
+    </div>
+    <div class="col-md-9 col-sm-8 mi_u-marginB8X mi_u-textBreakAll">
+      <p>{{ doc.originalHash }}</p>
+      <a class="mi_u-colorRed250 mi_u-textDecorationUnderline mi_u-fontWeightBold" href="" ng-show="!oHashValid" ng-click="showOHashError = !showOHashError">{{ 'VERIFY.WHY' | translate }}</a>
+      <div class="alert alert-danger alert-incorrect" ng-show="showOHashError" role="alert">
+        <p>{{ 'VERIFY.WRONG_HASH' | translate }}</p>
       </div>
-      <div class="col-md-9 col-sm-8">
-        {{ doc.name }}
-      </div>
-
-      <div class="col-md-3 col-sm-4" ng-class="{'text-success': oHashValid, 'text-danger': !oHashValid}">
-        <strong>{{ 'VERIFY.ORIG_HASH' | translate }}<i class="glyphicon" ng-class="{'glyphicon-ok': oHashValid, 'glyphicon-remove': !oHashValid}"></i></strong>
-      </div>
-      <div class="col-md-9 col-sm-8">
-        {{ doc.originalHash }}
-        <a href="" ng-show="!oHashValid" ng-click="showOHashError = !showOHashError">{{ 'VERIFY.WHY' | translate }}</a>
-        <p class="alert alert-danger alert-incorrect" ng-show="showOHashError" role="alert">
-          {{ 'VERIFY.WRONG_HASH' | translate }}
-        </p>
-      </div>
-
+      <p class="mi_u-colorRed250" ng-if="doc.encrypted">{{ 'VERIFY.ENCRYPT.HASH_NOT_AVAILABLE' | translate }}</p>
     </div>
 
-    <div class="verify-info row top-padder-md" id="signers" ng-repeat="signature in signatures">
-      <div class="col-md-3 col-sm-4">
-        <strong>{{ 'VERIFY.SIGNER' | translate }}</strong>
-      </div>
-      <div class="col-md-9 col-sm-8">
-        {{ signature.signer.name }} &lt;{{ signature.signer.email }}&gt;
-      </div>
-
-      <div class="col-md-3 col-sm-4">
-        <strong>{{ 'VERIFY.ID' | translate }}</strong>
-      </div>
-      <div class="col-md-9 col-sm-8">
-        {{ signature.signer.id }}
-      </div>
-
-      <div class="col-md-3 col-sm-4">
-        <strong>{{ 'VERIFY.SIG_DATE' | translate }}</strong>
-      </div>
-      <div class="col-md-9 col-sm-8">
-        {{ signature.signedAt | date:'medium':'UTC' }}
-      </div>
-
-      <div class="col-md-3 col-sm-4" ng-class="{'text-success': signature.certificate.valid, 'text-danger': !signature.certificate.valid}">
-        <strong>{{ 'VERIFY.CERT_NUMBER' | translate }}<i class="glyphicon" ng-class="{'glyphicon-ok': signature.certificate.valid, 'glyphicon-remove': !signature.certificate.valid}"></i></strong>
-      </div>
-      <div class="col-md-9 col-sm-8">
-        {{ signature.certificate.getSerialNumber() }}
-        <a href="" ng-show="!signature.certificate.valid" ng-click="signature.showCertError = !signature.showCertError">{{ 'VERIFY.WHY' | translate }}</a>
-        <p class="alert alert-danger alert-incorrect" ng-show="signature.showCertError" role="alert">
-          {{ 'VERIFY.WRONG_CERT' | translate }}
-        </p>
-      </div>
-
-      <div class="col-md-3 col-sm-4" ng-class="{'text-success': signature.valid, 'text-danger': !signature.valid}">
-        <strong>{{ 'VERIFY.SIGNATURE' | translate }}<i class="glyphicon" ng-class="{'glyphicon-ok': signature.valid, 'glyphicon-remove': !signature.valid}"></i></strong>
-      </div>
-      <div class="col-md-9 col-sm-8 text-break">
-        <p>{{ signature.sig('base64') }}</p>
-        <a href="" ng-show="!signature.valid" ng-click="signature.showValidError = !signature.showValidError">{{ 'VERIFY.WHY' | translate }}</a>
-        <p class="alert alert-danger alert-incorrect" ng-show="signature.showValidError" role="alert">
-          {{ 'VERIFY.WRONG_SIG' | translate }}
-        </p>
+    <div>
+      <strong class="col-xs-12 mi_u-fontWeightBold mi_u-marginB2X">
+        {{ 'VERIFY.INFORMATION_SIGNER' | translate }}
+      </strong>
+      <div id="signers" ng-repeat="signature in signatures">
+        <div class="mi_VerifyXml-attributeName col-md-3 col-sm-4 mi_u-marginB1X">
+          <strong class="mi_u-fontWeightBold mi_u-textTransformUppercase">{{ 'VERIFY.SIGNER' | translate }}</strong>
+        </div>
+        <div class="col-md-9 col-sm-8 mi_u-fontWeightBold mi_u-coreNeutral600 mi_u-marginB1X mi_u-textBreakAll">
+          {{ signature.signer.name }} &lt;{{ signature.signer.email }}&gt;
+        </div>
+        <div class="mi_VerifyXml-attributeName col-md-3 col-sm-4 mi_u-marginB1X">
+          <strong class="mi_u-fontWeightBold mi_u-textTransformUppercase">{{ 'VERIFY.ID' | translate }}</strong>
+        </div>
+        <div class="col-md-9 col-sm-8 mi_u-marginB1X mi_u-textBreakAll">
+          {{ signature.signer.id }}
+        </div>
+        <div class="mi_VerifyXml-attributeName col-md-3 col-sm-4 mi_u-marginB1X">
+          <strong class="mi_u-fontWeightBold mi_u-textTransformUppercase">{{ 'VERIFY.SIG_DATE' | translate }}</strong>
+        </div>
+        <div class="col-md-9 col-sm-8 mi_u-marginB1X mi_u-textBreakAll">
+          {{ signature.signedAt | date:'medium':'UTC' }}
+        </div>
+        <div class="mi_VerifyXml-attributeName col-md-3 col-sm-4 mi_u-marginB1X" ng-class="{'mi_u-colorGreen300': signature.certificate.valid, 'mi_u-colorRed250': !signature.certificate.valid}">
+          <strong class="mi_u-fontWeightBold mi_u-textTransformUppercase">{{ 'VERIFY.CERT_NUMBER' | translate }}<i class="glyphicon" ng-class="{'glyphicon-ok': signature.certificate.valid, 'glyphicon-remove': !signature.certificate.valid}"></i></strong>
+        </div>
+        <div class="col-md-9 col-sm-8 mi_u-marginB1X mi_u-textBreakAll">
+          {{ signature.certificate.getSerialNumber() }}
+          <a class="mi_u-colorRed250 mi_u-textDecorationUnderline mi_u-fontWeightBold" href="" ng-show="!signature.certificate.valid" ng-click="signature.showCertError = !signature.showCertError">{{ 'VERIFY.WHY' | translate }}</a>
+          <div class="alert alert-danger alert-incorrect" ng-show="signature.showCertError" role="alert">
+            <p>{{ 'VERIFY.WRONG_CERT' | translate }}</p>
+          </div>
+        </div>
+        <div class="mi_VerifyXml-attributeName col-md-3 col-sm-4 mi_u-marginB1X" ng-class="{'mi_u-colorGreen300': signature.valid, 'mi_u-colorRed250': !signature.valid, 'mi_u-colorYellow300': doc.encrypted}">
+          <strong class="mi_u-fontWeightBold mi_u-textTransformUppercase"></strongclass>{{ 'VERIFY.SIGNATURE' | translate }}<i class="glyphicon" ng-class="{'glyphicon-ok': signature.valid, 'glyphicon-remove': !signature.valid, 'glyphicon-lock': doc.encrypted}"></i></strong>
+        </div>
+        <div class="col-md-9 col-sm-8 mi_u-marginB8X mi_u-textBreakAll">
+          <p>{{ signature.sig('base64') }}</p>
+          <a class="mi_u-colorRed250 mi_u-textDecorationUnderline mi_u-fontWeightBold" href="" ng-show="!signature.valid" ng-click="signature.showValidError = !signature.showValidError">{{ 'VERIFY.WHY' | translate }}</a>
+          <div class="alert alert-danger alert-incorrect" ng-show="signature.showValidError" role="alert">
+            <p>{{ 'VERIFY.WRONG_SIG' | translate }}</p>
+          </div>
+          <p class="mi_u-colorRed250" ng-if="doc.encrypted">{{ 'VERIFY.ENCRYPT.SIGNATURE_NOT_AVAILABLE' | translate }}</p>
+        </div>
       </div>
     </div>
 
-    <div ng-show="record" class="verify-info row top-padder-md" id="conservancy-record">
-      <div class="col-md-12" ng-class="{'text-danger': !record.valid}">
-        <strong>
+    <div class="mi_u-inlineBlock"ng-show="record" id="conservancy-record">
+      <div class="col-xs-12 mi_u-marginB1X" ng-class="{'mi_u-colorRed250': !record.valid}">
+        <strong class="mi_u-fontWeightBold mi_u-marginB2X">
           {{ 'VERIFY.CONSERVANCY_RECORD' | translate }}
           <i class="glyphicon" ng-class="{'glyphicon-remove': !record.valid}"></i>
         </strong>
-        <a ng-show="!record.valid" href="" ng-click="record.showValidCR = !record.showValidCR">{{ 'VERIFY.WHY' | translate }}</a>
-        <p class="alert alert-danger alert-incorrect" ng-show="record.showValidCR" role="alert">
-          {{ 'VERIFY.RECORD.WRONG_CR' | translate }}
-        </p>
+        <a class="mi_u-colorRed250 mi_u-textDecorationUnderline mi_u-fontWeightBold" ng-show="!record.valid" href="" ng-click="record.showValidCR = !record.showValidCR">{{ 'VERIFY.WHY' | translate }}</a>
+        <div class="alert alert-danger alert-incorrect" ng-show="record.showValidCR" role="alert">
+          <p>{{ 'VERIFY.RECORD.WRONG_CR' | translate }}</p>
+        </div>
       </div>
-
       <div ng-show="record.valid">
-        <div class="col-md-3 col-sm-4" ng-class="{'text-success': record.validCA, 'text-danger': !record.validCA}">
-          <strong>{{ 'VERIFY.RECORD.ISSUER' | translate }}</strong>
+        <div class="mi_VerifyXml-attributeName col-md-3 col-sm-4 mi_u-marginB1X" ng-class="{'mi_u-colorGreen300': record.validCA, 'mi_u-colorRed250': !record.validCA}">
+          <strong class="mi_u-fontWeightBold mi_u-textTransformUppercase">{{ 'VERIFY.RECORD.ISSUER' | translate }}</strong>
           <i class="glyphicon" ng-class="{'glyphicon-ok': record.validCA, 'glyphicon-remove': !record.validCA}"></i>
         </div>
-        <div class="col-md-9 col-sm-8">
+        <div class="col-md-9 col-sm-8 mi_u-fontWeightBold mi_u-coreNeutral600 mi_u-marginB1X">
           {{ record.caName() }}
         </div>
-
-        <div class="col-md-3 col-sm-4" ng-class="{'text-success': record.validTS, 'text-danger': !record.validTS}">
-          <strong>
+        <div class="mi_VerifyXml-attributeName col-md-3 col-sm-4 mi_u-marginB1X" ng-class="{'mi_u-colorGreen300': record.validTS, 'mi_u-colorRed250': !record.validTS}">
+          <strong class="mi_u-fontWeightBold mi_u-textTransformUppercase">
             {{ 'VERIFY.RECORD.TIMESTAMP' | translate }}
             <i class="glyphicon" ng-class="{'glyphicon-ok': record.validTS, 'glyphicon-remove': !record.validTS}"></i>
           </strong>
         </div>
-        <div class="col-md-9 col-sm-8">
+        <div class="col-md-9 col-sm-8 mi_u-marginB1X">
           {{ record.recordTimestamp() | date:'medium':'UTC' }}
-          <a href="" ng-show="!record.validTS" ng-click="record.showValidTS = !record.showValidTS">{{ 'VERIFY.WHY' | translate }}</a>
-          <p class="alert alert-danger alert-incorrect" ng-show="record.showValidTS" role="alert">
-            {{ 'VERIFY.RECORD.WRONG_TS' | translate:record.tsTranslation }}
-          </p>
+          <a class="mi_u-colorRed250 mi_u-textDecorationUnderline mi_u-fontWeightBold" href="" ng-show="!record.validTS" ng-click="record.showValidTS = !record.showValidTS">{{ 'VERIFY.WHY' | translate }}</a>
+          <div class="alert alert-danger alert-incorrect" ng-show="record.showValidTS" role="alert">
+            <p>{{ 'VERIFY.RECORD.WRONG_TS' | translate:record.tsTranslation }}</p>
+          </div>
         </div>
 
-        <div class="col-md-3 col-sm-4" ng-class="{'text-success': record.validArchive, 'text-danger': !record.validArchive}">
-          <strong>
+        <div class="mi_VerifyXml-attributeName col-md-3 col-sm-4" ng-class="{'mi_u-colorGreen300': record.validArchive, 'mi_u-colorRed250': !record.validArchive}">
+          <strong class="mi_u-fontWeightBold mi_u-textTransformUppercase"></strongclass>
             {{ 'VERIFY.RECORD.VALIDITY' | translate }}
             <i class="glyphicon" ng-class="{'glyphicon-ok': record.validArchive, 'glyphicon-remove': !record.validArchive}"></i>
           </strong>
         </div>
-        <div class="col-md-9 col-sm-8">
+        <div class="col-md-9 col-sm-8 mi_u-marginB8X">
           <p ng-show="!record.validArchive">
             {{ 'VERIFY.RECORD.WRONG_ARCHIVE' | translate }}
           </p>
@@ -163,17 +162,18 @@
       </div>
     </div>
 
-    <div class="row top-padder-md bottom-padder-md center">
-      <p><strong>{{ 'VERIFY.REVIEW' | translate }}</strong></p>
-    </div>
-
-    <div class="row bottom-padder-lg center">
+    <div class="col-xs-12 mi_u-textAlignCenter mi_u-marginB3X">
+      <p class="mi_u-marginB3X mi_u-fontWeightBold">{{ 'VERIFY.REVIEW' | translate }}</p>
       <button class="btn-lg btn-success" ng-click="clear()">{{ 'VERIFY.NEW_DOC' | translate }}</button>
     </div>
 
-    <hr>
-    <div id="pdf-container" class="center top-padder-md">
+    <div class="col-xs-12" ng-if="doc.encrypted">
+      <hr class="mi_u-divider" />
+      <p class="mi_VerifyXml-note mi_u-marginB3X mi_u-fontWeightBold mi_u-textAlignCenter" translate="VERIFY.ENCRYPT.NOTE"></p>
+    </div>
+
+    <div id="pdf-container" class="col-xs-12 mi_u-textAlignCenter mi_u-marginB3X" ng-if="!doc.encrypted">
       <ng-pdf template-url="views/pdfViewer.html"></ng-pdf>
     </div>
-  </div>
+  </section>
 </div>

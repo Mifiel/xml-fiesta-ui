@@ -27,6 +27,8 @@ angular
       .translations('es', TRANSLATIONS_ES)
       .preferredLanguage('es')
       .fallbackLanguage('en')
+      .useSanitizeValueStrategy('sanitizeParameters');
+
 
     $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|blob):/);
 
