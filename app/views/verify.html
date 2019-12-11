@@ -172,7 +172,7 @@
       <p class="mi_VerifyXml-note mi_u-marginB3X mi_u-fontWeightBold mi_u-textAlignCenter" translate="VERIFY.ENCRYPT.NOTE"></p>
     </div>
 
-    <div id="pdf-container" class="col-xs-12 mi_u-textAlignCenter mi_u-marginB3X">
+    <div id="pdf-container" class="col-xs-12 mi_u-textAlignCenter mi_u-marginB3X" ng-if="!doc.encrypted">
       <ng-pdf template-url="views/pdfViewer.html"></ng-pdf>
     </div>
   </section>
