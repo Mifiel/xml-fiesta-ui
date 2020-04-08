@@ -1,5 +1,8 @@
 # CHANGELOG
 
+# V1.2.1 - Bug fix - 8.Apr.2020
+- Upgrade XML Fista to fix a bug that generated a bad canonical xml
+
 # V1.2.0 - Encrypted documents - 10.Dec.2019
 - Add support for encrypted documents
 - Upgrade xml-fiesta-js with encrypted docs and several bug fixes
