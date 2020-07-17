@@ -50,6 +50,6 @@
   },
   "dependencies": {
     "@nucleus/ui-tokens": "^0.6.0",
-    "xml-fiesta": "^1.3.2"
+    "xml-fiesta": "^1.3.3"
   }
 }
