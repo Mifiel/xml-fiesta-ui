@@ -1,5 +1,8 @@
 # CHANGELOG
 
+# V1.2.3 - Bug fix - 17.Jul.2020
+- Upgrade XML Fista to fix a bug that mis-read line-endings
+
 # V1.2.1 - Bug fix - 8.Apr.2020
 - Upgrade XML Fista to fix a bug that generated a bad canonical xml
 
