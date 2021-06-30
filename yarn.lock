@@ -2,11 +2,6 @@
 # yarn lockfile v1
 
 
-"@nucleus/ui-tokens@^0.6.0":
-  version "0.6.0"
-  resolved "https://registry.mifiel.co/@nucleus%2fui-tokens/-/ui-tokens-0.6.0.tgz#c4e5bcc8301d05a54f5f6b5ca654b17578217d40"
-  integrity sha512-RpSTpziZSSmtVH8w3GkZLZC0xsD5T/7jtouUOUzsl83E+mRxwdNggmWjWD7tChXTLKnK7qmyMqhUNKcFIAHsIg==
-
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"

@@ -2,7 +2,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 // bower:scss
 @import 'bootstrap-sass-official/assets/stylesheets/bootstrap.scss';
 // endbower
-@import '../../node_modules/@nucleus/ui-tokens/dist/web/tokens.scss';
+@import './vendor/index';
 
 @import 'utils/index';
 @import 'upload';
