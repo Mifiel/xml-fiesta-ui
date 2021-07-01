@@ -1,10 +1,15 @@
 # CHANGELOG
 
-# V1.2.3 - Bug fix - 17.Jul.2020
-- Upgrade XML Fista to fix a bug that mis-read line-endings
+# V1.2.3 - Bug fix - 1.Jul.2021
+- Upgrade XML Fiesta to fix a bug that generated a bad canonical xml when xml has geolocation
+- Add publish config
+- Remove ui-tokens dependency
+
+# V1.2.2 - Bug fix - 17.Jul.2020
+- Upgrade XML Fiesta to fix a bug that mis-read line-endings
 
 # V1.2.1 - Bug fix - 8.Apr.2020
-- Upgrade XML Fista to fix a bug that generated a bad canonical xml
+- Upgrade XML Fiesta to fix a bug that generated a bad canonical xml
 
 # V1.2.0 - Encrypted documents - 10.Dec.2019
 - Add support for encrypted documents
