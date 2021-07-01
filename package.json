@@ -51,6 +51,6 @@
     "serve": "grunt serve"
   },
   "dependencies": {
-    "xml-fiesta": "^1.3.3"
+    "xml-fiesta": "^1.3.4"
   }
 }

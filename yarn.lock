@@ -5468,10 +5468,10 @@ xml-crypto@^1.4.1:
     xmldom "0.1.27"
     xpath "0.0.27"
 
-xml-fiesta@^1.3.3:
-  version "1.3.3"
-  resolved "https://registry.mifiel.co/xml-fiesta/-/xml-fiesta-1.3.3.tgz#ee5020d89740e5beffc1ce250f4053d7bc9b672e"
-  integrity sha512-eiVdKrMNcLOlt+fazmnxdtzbDuV0pzCaivBGO2g008nwpZ+ZeQeC+hQpZSknfI0hHUtwnA4s7k0wcnATL7s8ig==
+xml-fiesta@^1.3.4:
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/xml-fiesta/-/xml-fiesta-1.3.4.tgz#0ffd07ac3ace677bbce0d2878c7bd60e672bd034"
+  integrity sha512-sC167C8CZ8hOG+IKQqOlSOi/Xj5XKmwYYfMh9tQncuIt65OUZGYFmNY2D7Emjhjr8Mxo897e/YHNV4VyEZView==
   dependencies:
     jsrsasign "^5.0.10"
     promise "^7.1.1"
